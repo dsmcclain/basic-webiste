@@ -1,3 +1,15 @@
-.placeholder {
-  background-color: blue;
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px;
+}
+
+.nav-link-wrapper {
+  display: flex;
+}
+
+.nav-wrapper > .nav-link-wrapper > div {
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }
