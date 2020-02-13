@@ -68,7 +68,6 @@ body {
   position: absolute;
   top: 0;
   display: flex;
-  font-size: 2.5em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -78,7 +77,14 @@ body {
   padding-right: 100px;
 }
 
-.subtitle {
+.portfolio-item-wrapper:hover .site-title {
+  transition: .5s;
+  opacity: 1;
+}
+
+.site-title {
+  font-size: 2.5em;
   font-weight: 600;
   color: white;
+  opacity: 0.5;
 }
