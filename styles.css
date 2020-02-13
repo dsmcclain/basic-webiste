@@ -88,3 +88,14 @@ body {
   color: white;
   opacity: 0.5;
 }
+
+/* About page */
+
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-img-wrapper img {
+  width: 100%;
+}
