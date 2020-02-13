@@ -49,7 +49,7 @@ body {
 
 .portfolio-items-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .portfolio-item-wrapper {
@@ -68,6 +68,7 @@ body {
   position: absolute;
   top: 0;
   display: flex;
+  font-size: 2.5em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
