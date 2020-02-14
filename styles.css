@@ -117,7 +117,7 @@ font-family: 'Source Code Pro', monospace;
   color: lightseagreen;
 }
 
-/* Articles Section */
+/* Articles Containers */
 
 .articles-container {
   display: grid;
@@ -126,29 +126,41 @@ font-family: 'Source Code Pro', monospace;
 }
 
 .articles-children:nth-child(odd) {
- background-color: mediumaquamarine;
+ background-color: pink;
 }
 
 .articles-children:nth-child(even) {
-  background-color: salmon;
- }
+  background-color: khaki;
+}
 
- .header {
-   grid-column: 1 / -1;
- }
+.header {
+  grid-column: 1 / -1;
+}
 
- .sidebar {
+.sidebar {
   grid-row: 2 / -1;
 }
 
- .content-main {
-   grid-column: 3 / 7;
- }
- 
- .content-outside-margin {
-   grid-column: 7 / -1;
- }
+.content-main {
+  grid-column: 3 / 7;
+}
 
- .footer {
-   grid-column: 2 /-1;
- }
+.content-outside-margin {
+  grid-column: 7 / -1;
+}
+
+.footer {
+  grid-column: 2 /-1;
+}
+
+/*Articles Styles */
+
+.about-statement {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 50%;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
