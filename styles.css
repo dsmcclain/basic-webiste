@@ -164,3 +164,50 @@ font-family: 'Source Code Pro', monospace;
   border-bottom: 1px solid black;
   font-weight: bold;
 }
+
+/* Article Page */
+
+.article-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+.article-wrapper > * {
+  grid-column: 2;
+  gap: 10px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.article-title {
+  text-align: center;
+}
+
+.article-by-line {
+  text-align: center;
+  font-size: .75em;
+  color: #777
+}
+
+.article-hero-image {
+  max-width: 40%;
+  max-height: 30%;
+  margin: auto;
+}
+
+.margin-comment {
+  grid-column: 3;
+  font-size: .9em;
+  color: #777;
+}
+
+.article-footer {
+  grid-column: 2;
+  color: #777;
+  min-width: 0;
+}
+
+.separator-line {
+  border-top: 1px solid black;
+  max-width: 15%;
+}
