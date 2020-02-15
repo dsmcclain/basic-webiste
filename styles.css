@@ -190,7 +190,17 @@ font-family: 'Source Code Pro', monospace;
 }
 
 .article-hero-image {
-  grid-column: 3 / 4;
+  grid-column: 2 / 4;
+}
+
+.hero-side-caption {
+  grid-column: 4 / 5;
+}
+
+.hero-side-caption h2 {
+  margin-top: 0px;
+  margin-left: 10px;
+  color: salmon;
 }
 
 .article-hero-image img {
