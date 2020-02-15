@@ -169,11 +169,11 @@ font-family: 'Source Code Pro', monospace;
 
 .article-wrapper {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1fr repeat(3, 2fr) 1fr;
 }
 
 .article-wrapper > * {
-  grid-column: 2;
+  grid-column: 2 / 5;
   gap: 10px;
   min-width: 0;
   min-height: 0;
@@ -190,15 +190,18 @@ font-family: 'Source Code Pro', monospace;
 }
 
 .article-hero-image {
-  max-width: 40%;
-  max-height: 30%;
-  margin: auto;
+  grid-column: 3 / 4;
+}
+
+.article-hero-image img {
+  width: 100%;
 }
 
 .margin-comment {
-  grid-column: 3;
+  grid-column: 5;
   font-size: .9em;
   color: #777;
+  margin-right: 10px;
 }
 
 .article-footer {
