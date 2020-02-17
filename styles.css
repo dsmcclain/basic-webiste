@@ -167,9 +167,15 @@ font-family: 'Source Code Pro', monospace;
 
 /* Article Page */
 
+.article-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: bisque;
+}
+
 .article-wrapper {
   display: grid;
-  grid-template-columns: 1fr repeat(3, 2fr) 1fr;
+  grid-template-columns: 1fr repeat(3, 1fr) 1fr;
 }
 
 .article-wrapper > * {
@@ -181,6 +187,7 @@ font-family: 'Source Code Pro', monospace;
 
 .article-title {
   text-align: center;
+  font-size: larger;
 }
 
 .article-by-line {
@@ -190,17 +197,18 @@ font-family: 'Source Code Pro', monospace;
 }
 
 .article-hero-image {
-  grid-column: 2 / 4;
+  max-width: 45vw;
+  margin: auto;
 }
 
 .hero-side-caption {
-  grid-column: 4 / 5;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .hero-side-caption h2 {
-  margin-top: 0px;
-  margin-left: 10px;
-  color: salmon;
+  color: orangered;
+  text-transform: uppercase;
 }
 
 .article-hero-image img {
