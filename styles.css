@@ -9,6 +9,7 @@ font-family: 'Source Code Pro', monospace;
 .container {
   display: grid;
   grid-template-columns: 1fr;
+  background: bisque;
 }
 
 .nav-wrapper {
@@ -123,18 +124,50 @@ font-family: 'Source Code Pro', monospace;
   display: grid;
   gap: 3px;
   grid-template: 150px 500px 150px / repeat(8, 1fr);
+  min-width: 0;
+  min-height: 0;
 }
 
-.articles-children:nth-child(odd) {
+/* .articles-children:nth-child(odd) {
  background-color: pink;
+} */
+
+/* .articles-children:nth-child(even) {
+  background-color: khaki;
+} */
+
+.content-main {
+  padding: 50px;
+  margin: auto;
 }
 
-.articles-children:nth-child(even) {
-  background-color: khaki;
+.articles-card {
+  background: linear-gradient(-70deg,
+  orange 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/dice.jpg');
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-radius: 10px;
+  padding-right: 40px;
+  height: 14vw;
+  width: 30vw;
+  text-decoration: none;
+  outline: 0;
+}
+
+.articles-card > .articles-title{
+  font-weight: bolder;
+  font-size: 3vw;
+  color: white;
+  text-align:right
 }
 
 .header {
   grid-column: 1 / -1;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -170,7 +203,14 @@ font-family: 'Source Code Pro', monospace;
 .article-container {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: bisque;
+  background: repeating-linear-gradient(
+    90deg,
+    bisque,
+    bisque 100px,
+    skyblue 100px,
+    skyblue 200px
+  )
+  /* background-color: bisque; */
 }
 
 .article-wrapper {
