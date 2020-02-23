@@ -237,6 +237,13 @@ font-family: 'Source Code Pro', monospace;
 .info-block {
   grid-column: 7 / 12;
   padding: 10px;
+  font-size: 12px;
+}
+
+@media (min-width: 800px) {
+  .info-block h3 {
+    font-size: 1.5vw;
+  }
 }
 
 .info-block h3 {
@@ -252,6 +259,11 @@ font-family: 'Source Code Pro', monospace;
 
 .article-hero-image img {
   width: 100%;
+}
+
+.article-subtitle {
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .article-footer {
