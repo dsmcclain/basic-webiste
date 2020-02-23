@@ -213,7 +213,6 @@ font-family: 'Source Code Pro', monospace;
 
 .article-wrapper > * {
   grid-column: 3 / 11;
-  gap: 10px;
   min-width: 0;
   min-height: 0;
 }
@@ -229,15 +228,33 @@ font-family: 'Source Code Pro', monospace;
   color: #777
 }
 
+.hero-wrapper {
+  display: grid;
+  grid-column: 2 / 12;
+  grid-template-columns: repeat(10, 1fr);
+}
+
 .article-hero-image {
-  grid-column: 2 / 7;
-  padding: 10px
+  grid-column: 1 / 6;
+  padding: 10px;
+  margin: auto;
 }
 
 .info-block {
-  grid-column: 7 / 12;
+  grid-column: 6 / -1;
   padding: 10px;
-  font-size: 12px;
+  font-size: 1.5vw;
+}
+
+@media (max-width: 800px) {
+  .article-hero-image {
+    grid-column: 3 / 9;
+  }
+
+  .info-block {
+    grid-column: 3 / 9;
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 800px) {
