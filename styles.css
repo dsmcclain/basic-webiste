@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
-font-family: 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', monospace;
   margin: 0px;
 }
 
@@ -57,16 +57,16 @@ font-family: 'Source Code Pro', monospace;
 
 /* Portfolio Styles */
 
-.portfolio-items-wrapper {
+.main-hero-wrapper {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.portfolio-item-wrapper {
+.hero-items-wrapper {
   position: relative;
 }
 
-.portfolio-img-background {
+.main-hero-background {
   height: 350px;
   width: 100%;
   background-size: cover;
@@ -74,29 +74,21 @@ font-family: 'Source Code Pro', monospace;
   background-repeat: no-repeat;
 }
 
-.img-text-wrapper {
+.hero-text-wrapper {
   position: absolute;
   top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100%;
-  text-align: center;
   padding-left: 100px;
   padding-right: 100px;
-}
-
-.portfolio-item-wrapper:hover .site-title {
-  transition: .5s;
-  opacity: 1;
 }
 
 .site-title {
   font-size: 2.5em;
   font-weight: 600;
   color: white;
-  opacity: 0.5;
 }
 
 /* About page */
