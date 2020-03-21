@@ -133,7 +133,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: left;
-  padding: 50px;
+  padding: 20px 50px 50px 50px;
   max-height: 18vw;
 }
 
@@ -197,6 +197,14 @@ body {
   width: 50%;
   border-bottom: 1px solid black;
   font-weight: bold;
+}
+
+.articles-section-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 3.2vw;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /* Article Page */
