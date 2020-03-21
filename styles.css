@@ -115,7 +115,7 @@ body {
 .articles-container {
   display: grid;
   gap: 3px;
-  grid-template: 150px 500px 150px / repeat(8, 1fr);
+  grid-template: 150px auto 150px / repeat(8, 1fr);
   min-width: 0;
   min-height: 0;
 }
@@ -134,7 +134,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   justify-content: left;
   padding: 20px 50px 50px 50px;
-  max-height: 18vw;
 }
 
 @media (max-width: 800px) {
@@ -205,6 +204,10 @@ body {
   font-size: 3.2vw;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.articles-section-header.by-others{
+  margin-top: 20px;
 }
 
 /* Article Page */
