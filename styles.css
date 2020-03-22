@@ -9,7 +9,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  background: bisque;
+  background: #FFB37B;
 }
 
 .nav-wrapper {
@@ -34,7 +34,7 @@ body {
 }
 
 .nav-link a {
-  color: #8a8a8a;
+  color: #4b4b4b;
   text-decoration: none;
   transition: color 0.5s;
 }
@@ -153,14 +153,14 @@ body {
 
 .articles-card.yahtzee {
   background: linear-gradient(-70deg,
-  orange 30%,
+  #AFC5FF 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/dice.jpg');
 }
 
 .articles-card.reminder {
   background: linear-gradient(-70deg,
-  salmon 30%,
+  #AFC5FF 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/clocks.jpg');
 }
@@ -182,6 +182,10 @@ body {
   grid-column: 1 / -1;
   grid-template-columns: 1fr 6fr 1fr;
   background-color: orange;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 6fr 1fr;
+  background-color: #FFF7AA;
 }
 
 .footer-text {
@@ -217,7 +221,7 @@ body {
 .article-container {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: bisque;
+  background-color: #FFB37B;
 }
 
 .article-wrapper {
@@ -285,7 +289,7 @@ body {
 }
 
 .info-block h3 > * {
-  color: cornflowerblue;
+  color: #4b4b4b;
 }
 
 .article-hero-image img {
@@ -332,3 +336,5 @@ body {
     font-size: 1.5em;
   }
 }
+
+/* #FF6130 */
