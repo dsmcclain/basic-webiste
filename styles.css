@@ -136,24 +136,19 @@ body {
   padding: 20px 50px 50px 50px;
 }
 
-@media (max-width: 800px) {
-  .content-main {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .articles-card {
   display: flex;
   align-items: center;
   justify-content: right;
   border-radius: 10px;
   padding-right: 40px;
-  padding-left: 5px;
+  padding-left: 40px;
   height: 14vw;
   min-width: 20vw;
   margin: 1.5vw;
   text-decoration: none;
   outline: 0;
+  min-height: 60px;
 }
 
 .articles-card.yahtzee {
@@ -303,4 +298,30 @@ body {
 .separator-line {
   border-top: 1px solid black;
   max-width: 15%;
+}
+
+@media (max-width: 800px) {
+  .content-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .content-main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .articles-card {
+    width: 150px;
+    height: 85px;
+  }
+
+  .articles-card > .articles-title {
+    font-size: 1em;
+  }
+
+  .articles-section-header {
+    font-size: 1.5em;
+  }
 }
