@@ -140,7 +140,7 @@ body {
   padding: 20px 50px 50px 50px;
 }
 
-.articles-card {
+.articles-icon {
   display: flex;
   align-items: center;
   justify-content: right;
@@ -155,21 +155,21 @@ body {
   min-height: 60px;
 }
 
-.articles-card.yahtzee {
+.articles-icon.yahtzee {
   background: linear-gradient(-70deg,
   #AFC5FF 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/dice.jpg');
 }
 
-.articles-card.reminder {
+.articles-icon.reminder {
   background: linear-gradient(-70deg,
   #AFC5FF 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/clocks.jpg');
 }
 
-.articles-card > .articles-title{
+.articles-icon > .articles-title{
   font-weight: bolder;
   font-size: 3vw;
   color: white;
@@ -324,12 +324,12 @@ body {
     justify-items: center;
   }
 
-  .articles-card {
+  .articles-icon {
     width: 150px;
     height: 85px;
   }
 
-  .articles-card > .articles-title {
+  .articles-icon > .articles-title {
     font-size: 1em;
   }
 
