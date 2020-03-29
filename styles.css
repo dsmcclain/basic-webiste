@@ -174,9 +174,16 @@ body {
 
 .articles-icon.reminder {
   background: linear-gradient(-70deg,
-  #AFC5FF 30%,
+  #FFEE6E 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/clocks.jpg');
+}
+
+.articles-icon.orbit {
+  background: linear-gradient(-70deg,
+  #FF3721 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/orbit.jpg');
 }
 
 .articles-icon > .articles-title{
