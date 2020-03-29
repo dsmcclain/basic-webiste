@@ -141,6 +141,10 @@ body {
 }
 
 .articles-card {
+  margin: 1.5vw;
+}
+
+.articles-icon {
   display: flex;
   align-items: center;
   justify-content: right;
@@ -149,27 +153,40 @@ body {
   padding-left: 40px;
   height: 14vw;
   min-width: 20vw;
-  margin: 1.5vw;
   text-decoration: none;
   outline: 0;
   min-height: 60px;
 }
 
-.articles-card.yahtzee {
+.articles-caption {
+  padding: 0px 5px 0px 5px;
+  margin: 5px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+}
+
+.articles-icon.yahtzee {
   background: linear-gradient(-70deg,
   #AFC5FF 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/dice.jpg');
 }
 
-.articles-card.reminder {
+.articles-icon.reminder {
   background: linear-gradient(-70deg,
-  #AFC5FF 30%,
+  #FFEE6E 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/clocks.jpg');
 }
 
-.articles-card > .articles-title{
+.articles-icon.orbit {
+  background: linear-gradient(-70deg,
+  #FF3721 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/orbit.jpg');
+}
+
+.articles-icon > .articles-title{
   font-weight: bolder;
   font-size: 3vw;
   color: white;
@@ -324,12 +341,12 @@ body {
     justify-items: center;
   }
 
-  .articles-card {
+  .articles-icon {
     width: 150px;
     height: 85px;
   }
 
-  .articles-card > .articles-title {
+  .articles-icon > .articles-title {
     font-size: 1em;
   }
 
