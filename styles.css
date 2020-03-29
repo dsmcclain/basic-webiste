@@ -140,6 +140,10 @@ body {
   padding: 20px 50px 50px 50px;
 }
 
+.articles-card {
+  margin: 1.5vw;
+}
+
 .articles-icon {
   display: flex;
   align-items: center;
@@ -149,10 +153,16 @@ body {
   padding-left: 40px;
   height: 14vw;
   min-width: 20vw;
-  margin: 1.5vw;
   text-decoration: none;
   outline: 0;
   min-height: 60px;
+}
+
+.articles-caption {
+  padding: 0px 5px 0px 5px;
+  margin: 5px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
 }
 
 .articles-icon.yahtzee {
