@@ -233,10 +233,12 @@ body {
 .footer-link-wrapper {
   display: flex;
   padding: 0 0 38px 44px;
+  color: #4b4b4b;
 }
 
 .footer-link-wrapper > div {
-  margin-right: 20px;
+  margin-right: 16px;
+  margin-left: 16px;
   font-size: 0.9em;
   text-transform: uppercase;
 }
