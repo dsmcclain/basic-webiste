@@ -220,14 +220,42 @@ body {
 }
 
 .footer {
-  display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: 1fr 6fr 1fr;
   background-color: #FFF7AA;
 }
 
-.footer-text {
-  grid-column: 2 / -1;
+.footer-title {
+  color: #4b4b4b;
+  font-size: 1.5em;
+  padding: 38px 38px 22px 38px;
+}
+
+.footer-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link-wrapper {
+  display: flex;
+  padding: 0 0 38px 22px;
+  color: #4b4b4b;
+}
+
+.footer-link-wrapper > div {
+  margin-right: 16px;
+  margin-left: 16px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.footer-link a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-name-logo {
+  padding-right: 44px;
+  color: #4b4b4b;
 }
 
 /*Articles Styles */
