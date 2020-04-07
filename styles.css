@@ -13,9 +13,18 @@ body {
 }
 
 .nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 38px;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px 38px;
+  background: #FFF7AA;
+  z-index: 100;
+  box-shadow: 0 8px 6px -6px #000;
+}
+
+.about-page-nav {
+  box-shadow: none;
 }
 
 .nav-link-wrapper {
@@ -55,7 +64,15 @@ body {
   color: black !important;
 }
 
+.header-title {
+  display: flex;
+  justify-content: center;
+  color: #4b4b4b;
+}
+
 .name-logo {
+  display: flex;
+  justify-content: right;
   color: #4b4b4b;
 }
 
@@ -143,6 +160,10 @@ body {
 .articles-card {
   margin: 1.5vw;
 }
+
+/* .icon-caption-wrapper {
+
+} */
 
 .articles-icon {
   display: flex;
@@ -292,7 +313,7 @@ body {
   font-size: 1.5vw;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1125px) {
   .article-hero-image {
     grid-column: 3 / 9;
   }
@@ -339,16 +360,20 @@ body {
   max-width: 15%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1125px) {
   .content-main {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .content-main {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .icon-caption-wrapper {
+    width: 230px;
   }
 
   .articles-icon {
@@ -358,6 +383,10 @@ body {
 
   .articles-icon > .articles-title {
     font-size: 1em;
+  }
+
+  .articles-caption {
+    font-size: 0.8em;
   }
 
   .articles-section-header {
