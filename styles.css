@@ -226,8 +226,8 @@ body {
 
 .footer-title {
   color: #4b4b4b;
-  font-size: 2vw;
-  padding: 38px;
+  font-size: 1.5em;
+  padding: 38px 38px 22px 38px;
 }
 
 .footer-content-wrapper {
@@ -237,7 +237,7 @@ body {
 
 .footer-link-wrapper {
   display: flex;
-  padding: 0 0 38px 44px;
+  padding: 0 0 38px 22px;
   color: #4b4b4b;
 }
 
