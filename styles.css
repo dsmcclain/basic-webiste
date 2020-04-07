@@ -220,14 +220,30 @@ body {
 }
 
 .footer {
-  display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: 1fr 6fr 1fr;
   background-color: #FFF7AA;
 }
 
-.footer-text {
-  grid-column: 2 / -1;
+.footer-title {
+  color: #4b4b4b;
+  font-size: 2vw;
+  padding: 38px;
+}
+
+.footer-link-wrapper {
+  display: flex;
+  padding: 0 0 38px 44px;
+}
+
+.footer-link-wrapper > div {
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.footer-link a {
+  color: black;
+  text-decoration: none;
 }
 
 /*Articles Styles */
