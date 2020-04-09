@@ -249,7 +249,7 @@ body {
 }
 
 .footer-link a {
-  color: black;
+  color: #4b4b4b;
   text-decoration: none;
 }
 
@@ -339,6 +339,11 @@ body {
   grid-column: 6 / -1;
   padding: 10px;
   font-size: 1.5vw;
+}
+
+.article-internal-image {
+  width: 90%;
+  margin: auto;
 }
 
 @media (max-width: 1125px) {
