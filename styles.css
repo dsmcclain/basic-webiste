@@ -72,7 +72,7 @@ body {
 
 .name-logo {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   color: #4b4b4b;
 }
 
