@@ -168,7 +168,7 @@ body {
 .articles-icon {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   border-radius: 10px;
   padding-right: 40px;
   padding-left: 40px;
@@ -211,7 +211,6 @@ body {
   font-weight: bolder;
   font-size: 3vw;
   color: white;
-  text-align: right
 }
 
 .header {
