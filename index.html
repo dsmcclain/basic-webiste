@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-  <title>Page Title</title>
+  <title>little programs</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="w3.js"></script>
 </head>
 <body>
-  <div w3-include-html="navbar.html"></div>
+  <div w3-include-html="navbar.html" id="top-navbar"></div>
   <div class="container">
 
     <div class="main-hero-wrapper">
@@ -114,7 +114,11 @@
   </div>
 
   <script>
-    w3.includeHTML();
+    w3.includeHTML(setStickyNavbar);
+
+    function setStickyNavbar() {
+      document.getElementById("top-navbar").style.position = "sticky";
+    }
   </script>
 </body>
 </html>
