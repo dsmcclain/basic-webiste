@@ -9,7 +9,7 @@
   <script src="w3.js"></script>
 </head>
 <body>
-  <div w3-include-html="navbar.html" id="top-navbar"></div>
+  <div w3-include-html="navbar.html" class="nav-wrapper"></div>
   <div class="container">
 
     <div class="main-hero-wrapper">
@@ -114,11 +114,7 @@
   </div>
 
   <script>
-    w3.includeHTML(setStickyNavbar);
-
-    function setStickyNavbar() {
-      document.getElementById("top-navbar").style.position = "sticky";
-    }
+    w3.includeHTML();
   </script>
 </body>
 </html>
