@@ -414,6 +414,48 @@ body {
   }
 }
 
+/* BUILT-BY-ME PAGE STYLES */
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.section-header {
+  grid-column: 3 / 6;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3.2vw;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  grid-column: 3 / 6;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 50%;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  font-size: 1.75vw;
+}
+
+.articles-section-wrapper {
+  grid-column: 2 / 8;
+}
+
+.article-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr)
+}
+
+.article-image {
+  grid-column: 1 / 3;
+}
+
 /* colors */
 
 /* body: #ffb47f */
