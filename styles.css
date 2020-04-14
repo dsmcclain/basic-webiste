@@ -9,7 +9,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  background: #FFB37B;
+  background: #fbb47f;
 }
 
 .nav-wrapper {
@@ -18,7 +18,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 20px 38px;
-  background: #FFF7AA;
+  background: #ffd0c3;
   z-index: 100;
   box-shadow: 0 8px 6px -6px #000;
 }
@@ -141,14 +141,6 @@ body {
   min-height: 0;
 }
 
-/* .articles-children:nth-child(odd) {
- background-color: pink;
-} */
-
-/* .articles-children:nth-child(even) {
-  background-color: khaki;
-} */
-
 .content-main {
   grid-column: 1 / -1;
   display: grid;
@@ -160,10 +152,6 @@ body {
 .articles-card {
   margin: 1.5vw;
 }
-
-/* .icon-caption-wrapper {
-
-} */
 
 .articles-icon {
   display: flex;
@@ -188,21 +176,21 @@ body {
 
 .articles-icon.yahtzee {
   background: linear-gradient(-70deg,
-  #AFC5FF 30%,
+  #c5e3ff 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/dice.jpg');
 }
 
 .articles-icon.reminder {
   background: linear-gradient(-70deg,
-  #FFEE6E 30%,
+  #93ca8b 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/clocks.jpg');
 }
 
 .articles-icon.orbit {
   background: linear-gradient(-70deg,
-  #FF3721 30%,
+  #fd6e5e 30%,
   rgba(0, 0, 0, 0) 30%),
   url('images/orbit.jpg');
 }
@@ -220,7 +208,7 @@ body {
 
 .footer {
   grid-column: 1 / -1;
-  background-color: #FFF7AA;
+  background-color: #ffd0c3;
 }
 
 .footer-title {
@@ -297,7 +285,7 @@ body {
 .article-container {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #FFB37B;
+  background-color: #fbb47f;
 }
 
 .article-wrapper {
@@ -370,7 +358,7 @@ body {
 }
 
 .info-block h3 > * {
-  color: orangered;
+  color: #b60d00;
 }
 
 .article-hero-image img {
@@ -426,4 +414,11 @@ body {
   }
 }
 
-/* #FF6130 */
+/* colors */
+
+/* body: #ffb47f */
+/* header/footer: #ffd0c3 */
+/* cards: #fff190 */
+/*        #c5e3ff */
+/*        #fd6e5e */
+/*        #93ca8b */
