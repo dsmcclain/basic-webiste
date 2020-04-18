@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>little programs</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="article-container">
+    <div class="nav-wrapper">
+      <div class="nav-link-wrapper">
+        <div class="nav-link">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="about.html">About</a>
+        </div>
+        <div class="nav-link">
+          <a href="https://github.com/dsmcclain">Github</a>
+        </div>
+      </div>
+
+      <div class="header-title">
+        <div>little programs</div>
+      </div>
+
+      <div class="name-logo">
+        <div>DYLAN MCCLAIN</div>
+      </div>
+    </div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>Take A Break</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p>March 20th, 2020</p>
+      </div>
+      <div class="hero-wrapper">
+        <div class="article-hero-image">
+          <img src="images/take_a_break.jpg">
+        </div>
+
+        <div class="info-block">
+          <h3><span class="info-category">What it is: </span>An hourly reminder to rest my eyes and neck from computer work. In the form of irresistable cat photos that pop up on my screen.</h3>
+          <h3><span class="info-category">How it's built: </span>The core is a 4-line shell script that picks at random from a set of cat photos. A cron job runs the script at the beginning of each hour.</h3>
+          <h3><span class="info-category">How to use it: </span>Set the cron job for whatever interval you want. Then just feed your script with cat photos.</h3>
+        </div>
+      </div>
+
+      <p class="article-subtitle">THE STORY</p>
+
+      <p>
+        <span style="color: #b60d00">The problem was</span> I started having tremors in my head and neck. Turns out I have a condition called Cervical Dystonia, and my new lifestyle of sitting for hours at a computer under intense focus was...not good. I needed a recurring reminder to stand up, walk around the block, or just take a break for 5 minutes. And it needed to be something that was hard to dismiss.
+      </p>
+      <img class="article-internal-image" src="images/take_a_break2.jpg">
+      <p>
+        My solution was to bring my cat to work. Or rather, to build a cron job that showed me a photo of my cat every so often, to remind me to give my body a break. I had never set up a cron job on my computer, but it's not hard. If you aren't familiar, <span class="codespan">cron</span> is a utility available on most systems which allows you to run jobs at set intervals. In this context, a 'job' can be almost anything.
+      </p>
+      <p>
+        Most linux distributions have the <span class="codespan">crontab</span> command, which makes setting a cron job even easier. Running <span class="codespan">crontab -e</span> opens a document in your default editor, and you just add your cron syntax along with the command, script, or path to a script that you want to run as a job. For me, this looks like: 
+      </p>
+      <div class="codeblock">
+        <p>0 * * * * /home/dylan/take_a_break.sh</p>
+      </div>
+      <p>
+        Where <span class="codespan">0 * * * *</span> is the cron syntax that means 'at the start of every hour' and <span class="codespan">/home/dylan/take_a_break.sh</span> is the path to the script that I want to run. The script itself is very simple too:
+      </p>
+      <div class="codeblock">
+        <p>!#/bin/bash<br>
+          <br>
+          num=$(bash -c 'echo $RANDOM')<br>
+          num=$((num % 7 + 1))<br>
+          filepath="/home/dylan/Documents/reminder$num.jpg"<br>
+          <br>
+          DISPLAY=:0 /usr/bin/eog $filepath<br>
+        </p>
+      </div>
+      <p>
+        This bash script uses interpolation to add a random number between one and seven to a string <span class="codespan">filepath</span>. It then feeds that string as an argument to the command <span class="codespan">/usr/bin/eog</span> which is the executable path on my machine for Eye of GNOME, the basic image-viewing app for the linux desktop. For this script to work I need seven image files in my Documents folder named <span class="codespan">reminder1.jpg</span> through <span class="codespan">reminder7.jpg</span>. If I want to include more images in the roulette I just need to put them in the right folder with the right name (<span class="codespan">reminder8.jpg</span> will be next), and then increment the multiplier on line 4 of the script. 
+      </p>
+      <p>
+        <span style="color:#b60d00">The most interesting piece of the design puzzle was</span> generating the random number. <span class="codespan">$RANDOM</span> is a function built in to Bash that returns a number ranging from 0 to 32767. Seems simple enough. But after a while of troubleshooting the script and having Eye of Gnome pop up with an 'image not found' error, I discovered that <span class="codespan">$RANDOM</span> was not available in cron. Even though I was asking cron to run a bash script, it still didn't know how to interpret <span class="codespan">$RANDOM</span>. The solution turned out to be more interpolation. By passing <span class="codespan">$RANDOM</span> as a string to bash I can return the random number without cron having to know anything about how <span class="codespan">$RANDOM</span> should be handled. Once that hurdle was cleared, it was on to the cat photos.
+      </p>
+      <p>
+        This little program is really satisfying to me.  It's had a clear, positive impact on my body and significantly reduced the amount of tremors I'm having at work, AND it involves photos of my cat.  Win win, in my book. And it was my toe-dip into the pool of cron jobs, giving me familiarity with a core utility that will be a very useful tool for future programs. <span style="color:#b60d00">Thanks for reading!</span>
+      </p>
+      <div class="article-footer">
+        <div class="separator-line"></div>
+        <p>...where a program that reminds me to take regular breaks ends up increasing my productivity</p>
+      </div>
+    </div>
+  </div>
+  <div class="articles-children footer">
+    <div class="footer-title">little programs</div>
+
+    <div class="footer-content-wrapper">
+      <div class="footer-link-wrapper">
+        <div class="footer-link">
+          <a href="about.html">About</a>
+        </div>
+        |
+        <div class="footer-link">
+          <a href="about.html">Archives</a>
+        </div>
+        |
+        <div class="footer-link">
+          <a href="about.html">Programs By Me</a>
+        </div>
+        |
+        <div class="footer-link">
+          <a href="https://github.com/dsmcclain">Github</a>
+        </div>
+        |
+        <div class="footer-link">
+          <a href="https://www.linkedin.com/in/dylan-mcclain-987815183/">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-name-logo">
+        <div>DYLAN MCCLAIN</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
