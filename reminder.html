@@ -33,11 +33,11 @@
     <div class="article-wrapper">
 
       <div class="article-title">
-        <h1>Simple Reminder</h1>
+        <h1>Take A Break</h1>
       </div>
 
       <div class="article-by-line">
-        <p>aka Take A Break</p>
+        <p>March 20th, 2020</p>
       </div>
       <div class="hero-wrapper">
         <div class="article-hero-image">
@@ -46,7 +46,7 @@
 
         <div class="info-block">
           <h3><span class="info-category">What it is: </span>An hourly reminder to rest my eyes and neck from computer work. In the form of irresistable cat photos that pop up on my screen.</h3>
-          <h3><span class="info-category">How it's built: </span>The core is a 4-line shell script that picks at random from a set of cat photos. A cron-job runs the script at the beginning of each hour.</h3>
+          <h3><span class="info-category">How it's built: </span>The core is a 4-line shell script that picks at random from a set of cat photos. A cron job runs the script at the beginning of each hour.</h3>
           <h3><span class="info-category">How to use it: </span>Set the cron job for whatever interal you want. Then just feed your script with cat photos.</h3>
         </div>
       </div>
@@ -58,7 +58,10 @@
       </p>
       <img class="article-internal-image" src="images/reminder2.jpg">
       <p>
-        My solution was to bring my cat to work.  Or rather, to build a cron-job that showed me a photo of my cat every so often, to remind me to give my body a break. I had never set up a cron-job on my computer, and it turns out to be shockingly simple. Most linux distributions have the <span class="codespan">crontab</span> command, and the 
+        My solution was to bring my cat to work.  Or rather, to build a cron job that showed me a photo of my cat every so often, to remind me to give my body a break. I had never set up a cron job on my computer, but it's not hard. If you aren't familiar, <span class="codespan">cron</span> is a utility available on most systems, and it allows you to run jobs at set intervals. In this context, a 'job' can be almost anything.
+      </p>
+      <p>
+        Most linux distributions have the <span class="codespan">crontab</span> command, which makes setting a cron job even easier. Running <span class="codespan">crontab -e</span> opens a document in your default editor, and you just add your cron syntax and the command, script, or path to a script that you want to run as a job.  For me, this looks like: 
       </p>
       <p>
         <span style="color: orangered">The most interesting piece of the design puzzle was</span> something something something else. Probably a few more sentences here.
