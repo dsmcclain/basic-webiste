@@ -291,6 +291,7 @@ body {
 .article-wrapper {
   display: grid;
   grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  font-size: 18px;
 }
 
 .article-wrapper > * {
@@ -330,9 +331,21 @@ body {
 
 .codespan {
   color: orangered;
-  background-color: #f1f1f1;
+  background-color: #f1ccb0;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+.codeblock {
+  display: flex;
+  grid-column: 4 / 10;
+  justify-content: center;
+}
+
+.codeblock > p {
+  color: orangered;
+  background-color: #f1ccb0;
+  padding: 10px 15px 10px 15px;
 }
 
 .article-internal-image {
