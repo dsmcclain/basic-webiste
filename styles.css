@@ -303,11 +303,11 @@ body {
 .article-title {
   text-align: center;
   font-size: larger;
+  margin-bottom: 0px;
 }
 
 .article-by-line {
   text-align: center;
-  font-size: .75em;
   color: #777
 }
 
@@ -330,7 +330,7 @@ body {
 }
 
 .codespan {
-  color: orangered;
+  color: #b60d00;
   background-color: #f1ccb0;
   padding-left: 4px;
   padding-right: 4px;
@@ -343,7 +343,7 @@ body {
 }
 
 .codeblock > p {
-  color: orangered;
+  color: #b60d00;
   background-color: #f1ccb0;
   padding: 10px 15px 10px 15px;
 }

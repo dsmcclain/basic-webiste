@@ -37,7 +37,7 @@
       </div>
 
       <div class="article-by-line">
-        <p>March 20th, 2020</p>
+        <p>Built November 2019</p>
       </div>
       <div class="hero-wrapper">
         <div class="article-hero-image">
@@ -80,10 +80,10 @@
         </p>
       </div>
       <p>
-        This bash script uses interpolation to add a random number between one and seven to a string <span class="codespan">filepath</span>. It then feeds that string as an argument to the command <span class="codespan">/usr/bin/eog</span> which is the executable path on my machine for Eye of GNOME, the basic image-viewing app for the linux desktop. For this script to work I need seven image files in my Documents folder named <span class="codespan">reminder1.jpg</span> through <span class="codespan">reminder7.jpg</span>. If I want to include more images in the roulette I just need to put them in the right folder with the right name (<span class="codespan">reminder8.jpg</span> will be next), and then increment the multiplier on line 4 of the script. 
+        This bash script uses interpolation to add a random number between one and seven to a string <span class="codespan">filepath</span>. It then feeds that string as an argument to the command <span class="codespan">/usr/bin/eog</span> which is the executable path on my machine for Eye of GNOME, the basic image-viewing app for the linux desktop. For this script to work I need seven image files in my Documents folder named <span class="codespan">reminder1.jpg</span> through <span class="codespan">reminder7.jpg</span>. If I want to include more images in the roulette I just need to put them in the right folder with the right name (<span class="codespan">reminder8.jpg</span> will be next), and then increment the divisor on line 4 of the script. 
       </p>
       <p>
-        <span style="color:#b60d00">The most interesting piece of the design puzzle was</span> generating the random number. <span class="codespan">$RANDOM</span> is a function built in to Bash that returns a number ranging from 0 to 32767. Seems simple enough. But after a while of troubleshooting the script and having Eye of Gnome pop up with an 'image not found' error, I discovered that <span class="codespan">$RANDOM</span> was not available in cron. Even though I was asking cron to run a bash script, it still didn't know how to interpret <span class="codespan">$RANDOM</span>. The solution turned out to be more interpolation. By passing <span class="codespan">$RANDOM</span> as a string to bash I can return the random number without cron having to know anything about how <span class="codespan">$RANDOM</span> should be handled. Once that hurdle was cleared, it was on to the cat photos.
+        <span style="color:#b60d00">The most interesting piece of the design puzzle was</span> generating the random number. <span class="codespan">$RANDOM</span> is a function built in to Bash that returns a number ranging from 0 to 32767. Seems simple enough. But you can't just write <span class="codespan">num=$RANDOM</span>. I tried that, and after about an hour of troubleshooting the script and having Eye of GNOME pop up with an 'image not found' error, I discovered that <span class="codespan">$RANDOM</span> was not available in cron. Even though I was asking cron to run a bash script, it still didn't know how to interpret <span class="codespan">$RANDOM</span>. The solution turned out to be more interpolation. By passing <span class="codespan">$RANDOM</span> as a string to bash I can return the random number without cron having to know anything about how <span class="codespan">$RANDOM</span> should be handled. Once that hurdle was cleared, it was on to the cat photos.
       </p>
       <p>
         This little program is really satisfying to me.  It's had a clear, positive impact on my body and significantly reduced the amount of tremors I'm having at work, AND it involves photos of my cat.  Win win, in my book. And it was my toe-dip into the pool of cron jobs, giving me familiarity with a core utility that will be a very useful tool for future programs. <span style="color:#b60d00">Thanks for reading!</span>
