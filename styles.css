@@ -494,6 +494,25 @@ body {
   font-size: 20px;
   margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 600px)  {
+  .nav-link-wrapper {
+    display: none;
+  }
+
+  .header-title {
+    grid-column: 2 / 3;
+  }
+
+  .footer-title {
+    text-align: center
+  }
+
+  .footer-link-wrapper {
+    display: none;
+  }
+}
+
 /* colors */
 
 /* body: #ffb47f */
