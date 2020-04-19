@@ -259,7 +259,7 @@ body {
   font-size: 2vw;
 }
 
-@media (max-width:900px) {
+@media only screen and (max-width:900px) {
   .site-title {
     font-size: 32px;
   }
@@ -354,7 +354,7 @@ body {
   margin: auto;
 }
 
-@media (max-width: 1125px) {
+@media only screen and (max-width: 1125px) {
   .article-hero-image {
     grid-column: 3 / 9;
   }
@@ -365,7 +365,7 @@ body {
   }
 }
 
-@media (min-width: 800px) {
+@media only screen and (min-width: 800px) {
   .info-block h3 {
     font-size: 1.5vw;
   }
@@ -401,13 +401,13 @@ body {
   max-width: 15%;
 }
 
-@media (max-width: 1125px) {
+@media only screen and (max-width: 1125px) {
   .content-main {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .content-main {
     grid-template-columns: 1fr;
     justify-items: center;
