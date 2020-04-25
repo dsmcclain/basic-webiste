@@ -433,6 +433,13 @@ body {
   .articles-section-header {
     font-size: 1.5em;
   }
+
+  .codeblock {
+    grid-column: 2 / -2;
+    word-wrap: break-word;
+    overflow: scroll;
+    justify-content: unset;
+  }
 }
 
 /* BUILT-BY-ME PAGE STYLES */
@@ -494,7 +501,6 @@ body {
   font-size: 20px;
   margin-bottom: 10px;
 }
-
 
 .menu-toggler, .hamburger {
   display: none;
