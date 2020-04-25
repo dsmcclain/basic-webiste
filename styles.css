@@ -408,8 +408,8 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-  .nav-link a {
-    transition: none;
+  .nav-link:hover, .nav-link:active {
+    border-bottom: none;
   }
   
   .content-main {
