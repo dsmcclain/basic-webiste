@@ -408,6 +408,10 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+  .nav-link a {
+    transition: none;
+  }
+  
   .content-main {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -432,6 +436,23 @@ body {
 
   .articles-section-header {
     font-size: 1.5em;
+  }
+
+  .article-wrapper > * {
+    grid-column: 2 / -2;
+  }
+
+  .article-hero-image {
+    grid-column: 1 / -1;
+  }
+
+  .info-block{
+    grid-column: 1 / -1;
+    font-size: 16px;
+  }
+
+  .article-internal-image {
+    grid-column: 1 / -1;
   }
 
   .codeblock {
