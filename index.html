@@ -37,9 +37,36 @@
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide">0</li>
-            <li class="glide__slide">1</li>
-            <li class="glide__slide">2</li>
+            <li class="glide__slide">
+              <div class="articles-card">
+                <div class="icon-caption-wrapper">
+                  <a href="yahtzee.html" class="articles-icon yahtzee">
+                    <div class="articles-title">YAHTZEE</div>
+                  </a>
+                  <p class="articles-caption">Building the classic dice game with React.</p>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="articles-card">
+                <div class="icon-caption-wrapper">
+                  <a href="yahtzee.html" class="articles-icon yahtzee">
+                    <div class="articles-title">YAHTZEE</div>
+                  </a>
+                  <p class="articles-caption">Building the classic dice game with React.</p>
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="articles-card">
+                <div class="icon-caption-wrapper">
+                  <a href="yahtzee.html" class="articles-icon yahtzee">
+                    <div class="articles-title">YAHTZEE</div>
+                  </a>
+                  <p class="articles-caption">Building the classic dice game with React.</p>
+                </div>
+              </div>
+            </li>
           </ul>
 
           <div class="glide__arrows" data-glide-el="controls">
@@ -110,7 +137,11 @@
       elem.classList.add('active-nav-link')
     }
 
-    new Glide('.glide').mount()
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 1,
+      perView: 3
+    }).mount()
   </script>
 </body>
 </html>
