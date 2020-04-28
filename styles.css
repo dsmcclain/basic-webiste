@@ -465,6 +465,10 @@ body {
 
 /* BUILT-BY-ME PAGE STYLES */
 
+.glide {
+  grid-column: 2 / -2;
+}
+
 .content-wrapper {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
