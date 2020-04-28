@@ -33,6 +33,21 @@
             I find interesting.</p>
         </div>
       </div>
+
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">0</li>
+            <li class="glide__slide">1</li>
+            <li class="glide__slide">2</li>
+          </ul>
+
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+          </div>
+        </div>
+      </div>
   <!-- PROGRAMS BY ME SECTION -->
       <div class="articles-children content-main">
         <div class="articles-section-header">Built By Me</div>
@@ -91,6 +106,8 @@
     w3.includeHTML();
     const el = document.getElementById("home-link")
     el.classList.add("active-nav-link")
+
+    new Glide('.glide').mount()
   </script>
 </body>
 </html>
