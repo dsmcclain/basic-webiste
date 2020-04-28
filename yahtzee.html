@@ -19,6 +19,10 @@
       </div>
 
       <div class="article-by-line">
+        <p>Built Winter/Spring 2019</p>
+      </div>
+
+      <div class="article-by-line">
         <p></p>
       </div>
       <div class="hero-wrapper">
@@ -28,9 +32,8 @@
 
         <div class="info-block">
           <h3><span class="info-category">What it is:</span>The game of Yahtzee, playable in your browser.</h3>
-          <h3><span class="info-category">How it works:</span> This is a Single Page Application built with React, so the dice, buttons, and scorecard are all reactive elements on the page.  This means that the game data -- e.g. the amounts on the dice, the score, the turn count -- are all held in memory as 'state', and the various components on the page can respond to any changes to that state.  Load it once and it's ready to roll.</h3>
-          <h3><span class="info-category">Where to find it:</span> I deployed using Netlify, so you can play it <a href="https://react-yahtzee.netlify.com">here</a></h3>
-          <h3><span class="info-category">Who should care:</span> Anyone who grew up playing this frustrating and oddly addictive game of probability estimation.  Also prospective employers who want to verify that I can actually build software.</h3>
+          <h3><span class="info-category">How it's built:</span>This is a Single Page Application built with React.  There were some touchy details with the webpack configuration, but the app itself is essentially a clickable HTML table with a lot of reactive state, and an assist from a few dice images.</h3>
+          <h3><span class="info-category">How to use it:</span> I deployed using Netlify, so you can play it <a href="https://react-yahtzee.netlify.com">here</a>.</h3>
         </div>
       </div>
 
@@ -55,25 +58,21 @@
         Though I didn't know it at the time, attempting to learn React before ever learning JavaScript -- before even knowing what a JavaScript framework <i>was</i> -- was actually a very funny thing to do.  Sort of like getting on a ski lift before bothering to learn how to ski.  Such a person is going to have a punishing trip down the mountain.
       </p>
       <p>
-        And it <i>was</i> punishing.  But also, it was great.  Yes, every step of building this application was agonizing.  I didn't appreciate the ease and elegance of ruby as a language until I tried to muck my way through JavaScript.  Yes, I could have covered ground quicker by learning the right things in the right order.  I didn't know any better.  I was doing the best I could with the knowledge I had.  Yes, as more time passes and I look back at the code base it makes me cringe.  I think that some pieces of this application might be held together by duct-tape. None of it matters. I still love this little Yahtzee app.  It took me about three months to build the thing, in between all the other stuff I was trying to learn, but once I had it finished and deployed I felt a real sense of accomplishment.  I could link to it in a job application.  This is the app that made me like a real programmer.
-      </p>
-      <p class="article-subtitle">THE DETAILS</p>
-      <p>
-        React Yahtzee was built using React.  The layout and styling amount to about 150 lines of CSS, and yes I did use HTML &lt;table&gt; tags to build the scorecard.  I had no idea what CSS grid was when I built this, and some day when I remake this app using Vue I vow to use grids to build a yummy scoretable that is *gasp* responsive as well.
+        And it <i>was</i> punishing.  But also, it was great.  Yes, every step of building this application was agonizing.  I didn't appreciate the ease and elegance of ruby as a language until I tried to muck my way through JavaScript.  Yes, I could have covered ground quicker by learning the right things in the right order.  I didn't know any better.  I was doing the best I could with the knowledge I had.  Yes, as more time passes and I look back at the code base it makes me cringe.  I think that some pieces of this application might be held together by duct-tape. None of it matters. I still love this little Yahtzee app.  It took me about three months to build the thing, in between all the other stuff I was trying to learn, but once I had it finished and deployed I felt a real sense of accomplishment.  I could link to it in a job application.  This is the app that made me feel like a real programmer.
       </p>
       <p>
-        There is no database or backend structure to the app. All of the scores and turn information are held in memory in the stateful components.  As the game got further along in development I made an effort to add Redux as a state management tool.  I never succeeded.  My knowledge of React as a framework was still so preliminary, I think that adding Redux to the mix broke my little brain.  But on a design level, it was definitely the right instinct.  As an example, take a look at the score table.  That is the most complicated part of the app, as every cell in that score table has its own logic for evaluating its own scoring options.  The &lt;TableContainer&gt; represents these options as an array of fourteen integers, which I cryptically named 'potential'.  This array 'potential' is then passed through a &lt;Row&gt; component into a &lt;Cell&gt; component, which displays the potential score based on whether the cell is considered active (i.e. the user has not already entered a score there).  Then, if the user clicks on the cell, the event is passed back through &lt;Row&gt; to &lt;TableContainer&gt; where a second array (called 'scores') records the value from the 'potential' array.  Every cell on that table gets this array passed down to it through multiple layers.  It would be so nice to let that array just relax in the store.  Kick its feet up, enjoy a little refreshment, and wait around for an action to be dispatched.  Oh well.  It was not the right time for me to learn how to add Redux to a project mid-stream, so now my poor little arrays have to cover much more ground.
+        When I look back at it now, it seems pretty simple. The layout and styling amount to about 150 lines of CSS, and yes I did use HTML <span class=codespan>&lt;table&gt;</span> tags to build the scorecard.  I had no idea what CSS grid was when I built this, and some day when I remake this app using Vue I vow to use grids to build a yummy scoretable that is *gasp* responsive as well.
       </p>
       <p>
-        There's not much more to say.  I found some free dice .png's and use a random number to choose the correct image.  That's how the dice 'roll'.  Just red borders around the dice to show when they are in a 'hold' state.  Red borders around the scorecard cells when you have acheived the appropriate combination.  A confirmation modal pops up if you make a 'weird' move like ending your turn when you still have another roll, or choosing to put a zero somewhere when you can score more points somewhere else.  Little touches to make the game feel more playable.
+        <span style="color:#b60d00">The most interesting piece of the design puzzle was</span> sharing state efficiently amongst all the components.  There is no database or backend structure to the app, so all of the scores and turn information are held in memory in the stateful components.  As the game got further along in development I made an effort to add Redux as a state management tool.  I never succeeded.  My knowledge of React as a framework was still so preliminary, I think that adding Redux to the mix broke my little brain.  But on a design level, it was definitely the right instinct.  As an example, take a look at the score table.  That is the most complicated part of the app, as every cell in that score table has its own logic for evaluating its own scoring options.  The <span class="codespan">&lt;TableContainer&gt;</span> represents these options as an array of fourteen integers, which I cryptically named 'potential'.  This array 'potential' is then passed through a <span class="codespan">&lt;Row&gt;</span> component into a <span class="codespan">&lt;Cell&gt;</span> component, which displays the potential score based on whether the cell is considered active (i.e. the user has not already entered a score there).  Then, if the user clicks on the cell, the event is passed back through <span class="codespan">&lt;Row&gt;</span> to <span class="codespan">&lt;TableContainer&gt;</span> where a second array (called 'scores') records the value from the 'potential' array.  Every cell on that table gets this array passed down to it through multiple layers.  It would be so nice to let that array just relax in the store.  Kick its feet up, enjoy a little refreshment, and wait around for an action to be dispatched.  Oh well.  It was not the right time for me to learn how to add Redux to a project mid-stream, so now my poor little arrays have to cover much more ground.
       </p>
       <p>
-        Just six dice and a scorecard.  And the package-lock is still 7k lines long...
-      </p>
+        I wrote this program about 18 months ago, and it's encouraging to look at it after some time has passed and realize how far I've come.  The app plays smoothly in the browser, and it's fun to fire it up and blast through a game real quick, but it's rudimentary and a little messy under the hood. Still, it stands as a cherished artifact of my journey as a software developer, and like I said it was the first program that made me feel like a <span style="color:#b60d00">real</span> software developer. <span style="color:#b60d00">Thanks for reading!</span>
+      </>
 
       <div class="article-footer">
         <div class="separator-line"></div>
-        <p>This is the footer text.</p>
+        <p>...where a beginning developer attempts to learn a framework before learning the language.</p>
       </div>
     </div>
   </div>
