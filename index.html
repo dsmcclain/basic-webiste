@@ -103,9 +103,12 @@
   </div>
 
   <script>
-    w3.includeHTML();
-    const elem = document.getElementById("home-link")
-    elem.classList.add("active-nav-link")
+    w3.includeHTML(setActiveLink);
+
+    function setActiveLink() {
+      const elem = document.getElementById('home-link')
+      elem.classList.add('active-nav-link')
+    }
 
     new Glide('.glide').mount()
   </script>
