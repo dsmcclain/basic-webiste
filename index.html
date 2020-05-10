@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <title>little programs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.css">
   <link rel="stylesheet" href="styles.css">
   <script src="w3.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js"></script>
 </head>
 <body>
   <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
@@ -35,47 +32,6 @@
         </div>
       </div>
 
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide">
-              <div class="articles-card">
-                <div class="icon-caption-wrapper">
-                  <a href="yahtzee.html" class="articles-icon yahtzee">
-                    <div class="articles-title">YAHTZEE</div>
-                  </a>
-                  <p class="articles-caption">Building the classic dice game with React.</p>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="articles-card">
-                <div class="icon-caption-wrapper">
-                  <a href="take-a-break.html" class="articles-icon take-a-break">
-                    <div class="articles-title">TAKE A BREAK</div>
-                  </a>
-                  <p class="articles-caption">Getting started with cron jobs.</p>
-                </div>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="articles-card">
-                <div class="icon-caption-wrapper">
-                <a href="yahtzee.html" class="articles-icon orbit">
-                  <div class="articles-title">ORBIT</div>
-                </a>
-                <p class="articles-caption">A monopoly game for your terminal window.  Written in Ruby.</p>
-              </div>
-            </div>
-            </li>
-          </ul>
-
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-          </div>
-        </div>
-      </div>
   <!-- PROGRAMS BY ME SECTION -->
       <div class="articles-children content-main">
         <div class="articles-section-header">Built By Me</div>
@@ -137,13 +93,6 @@
       const elem = document.getElementById('home-link')
       elem.classList.add('active-nav-link')
     }
-
-    new Glide('.glide', {
-      type: 'carousel',
-      startAt: 1,
-      focusAt: 'center',
-      perView: 3
-    }).mount()
   </script>
 </body>
 </html>
