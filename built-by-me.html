@@ -63,8 +63,11 @@
   </div>
   <div w3-include-html="partials/footer.html" class="footer"></div>
   <script>
-    w3.includeHTML();
-    const el = document.getElementById("by-me-link")
-    el.classList.add("active-nav-link")
+    w3.includeHTML(setActiveLink);
+
+    function setActiveLink() {
+      const elem = document.getElementById('by-me-link')
+      elem.classList.add('active-nav-link')
+    }
   </script>
 </body>
