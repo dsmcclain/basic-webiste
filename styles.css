@@ -277,6 +277,30 @@ body {
   }
 }
 
+@media only screen and (max-width:1000px) {
+  /* RESPONSIVE STYLES FOR ABOUT PAGE */
+
+  .profile-img-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .profile-content-wrapper {
+    grid-column: 1 / -1;
+  }
+
+
+@media only screen and (max-width:700px) {
+  .two-column-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-img-wrapper > img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
 .articles-section-header {
   grid-column: 1 / -1;
   text-align: center;
