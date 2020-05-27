@@ -117,7 +117,7 @@ body {
 
 .two-column-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .profile-img-wrapper {
@@ -136,7 +136,20 @@ body {
 }
 
 .profile-content-wrapper h1 {
-  color: lightseagreen;
+  color: #b60d00;
+}
+
+.profile-content-wrapper h3 {
+  color: #b60d00;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile-content-wrapper p {
+  color: #4b4b4b;
+  font-size: 18px;
+  font-weight: bold';
 }
 
 /* Articles Containers */
@@ -287,6 +300,7 @@ body {
   .profile-content-wrapper {
     grid-column: 1 / -1;
   }
+}
 
 
 @media only screen and (max-width:700px) {
