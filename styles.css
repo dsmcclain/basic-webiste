@@ -217,6 +217,13 @@ body {
   url('images/light-streaks.jpg');
 }
 
+.articles-icon.vuelidate {
+  background: linear-gradient(-70deg,
+  #c5e3ff 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/honeycomb.jpg');
+}
+
 .articles-icon > .articles-title{
   font-weight: bolder;
   font-size: 3vw;
