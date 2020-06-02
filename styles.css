@@ -383,6 +383,10 @@ body {
   font-size: 1.5vw;
 }
 
+.info-block a {
+  text-decoration: none;
+}
+
 .codespan {
   color: #b60d00;
   background-color: #f1ccb0;
@@ -396,7 +400,7 @@ body {
   justify-content: center;
 }
 
-.codeblock > p {
+.codeblock > p, pre {
   color: #b60d00;
   background-color: #f1ccb0;
   padding: 10px 15px 10px 15px;

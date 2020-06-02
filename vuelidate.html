@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>little programs -- vuelidate</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="w3.js"></script>
+</head>
+<body>
+  <div class="article-container">
+    <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>Vuelidate</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p></p>
+      </div>
+      <div class="hero-wrapper">
+        <div class="article-hero-image">
+          <img src="images/forms.jpg">
+        </div>
+
+        <div class="info-block">
+          <h3><span class="info-category">What it is: </span>A library that handles input validations for apps using the Vue framework.</h3>
+          <h3><span class="info-category">How it's built: </span>Vuelidate is an open source library written in JavaScript and maintained by a small team of developers.</h3>
+          <h3><span class="info-category">How to use it: </span>Install the npm pacakage, then import the library into your Vue app globally or on a component-by-component basis as a mixin. The <a href="https://github.com/vuelidate/vuelidate">vuelidate github page</a> has a getting-started readme and their <a href="https://vuelidate.js.org/">official page</a> has more thorough documentation.</h3>
+        </div>
+      </div>
+
+      <p class="article-subtitle">THE PROGRAM</p>
+
+      <p>
+        We all need forms.  Forms for searching.  Forms for submitting payments.  Forms for creating an account.  Forms for configuring settings.  Forms for generating forms for filling out forms about other forms. Forms all the way down.      </p>
+      <p>
+        Email cannot be blank.  Phone number must be 10 digits.  Username is already taken.  These are validations.  The form has to impose some sort of structure on the data before it is submitted.  In some cases this validation is simple – Password must be at least 8 characters. But validations can also get complex. You must choose at least one but no more than four options. Setting X cannot be applied if setting Y is turned on. And the considerations about how to handle validations can also get very complex.  Should validations be applied on keystroke? Or on leave? Or when the user clicks submit? How should invalid fields be displayed? Does the styling of the form make it easy or difficult for the user to submit valid data?
+      </p>
+      <p>
+        I work on an app that uses lots of forms, and Vuelidate is the library that handles our validations.  You make vuelidate work by declaring a <span class="codespan">validations</span> object within your component, and then listing the fields you want to validate as keys inside the object.  Like so:
+      </p>
+      <div class="codeblock">
+        <pre>
+export default {
+  data() {
+    return {
+      username: ''
+    }
+  },
+
+  validations: {
+    return {
+      username: required
+    }
+  }
+}</pre>
+      </div>
+      <p>
+        Here we are using the most common validation -- <span class="codespan">required</span> which is one of many built in to the library. The meaning of the code is pretty straightforward: we have a reactive data element, <span class="codespan">username</span>, and the form is considered invalid unless that element has a value.  The library currently comes with 22 built in validators, like minLength and url, that can be great time savers and cover a lot of use cases.  The validations object is accessible within your component as <span class="codespan">$v</span> and acts like any other computed object. It has a very nice api with methods like <span class="codespan">$anyError</span> and <span class="codespan">$invalid</span> that make it easy to derive useful behavior from your validations. Wanna highlight a text box with a red border if the user forgot to enter a username? <span class="codespan">class="{'field-error': $v.username.$error }"</span>.  Wanna disable the submit button until all validations are met? <span class="codespan">$v.$anyError</span> makes it so easy.      </p>
+      </p>
+      <p>
+        <span style="color:#b60d00">The most interesting part of the library</span> is its support for custom validators. If you have a lot of forms you will eventually have needs beyond the 22 out-of-the-box validations.  Once you get a hang of the structure of the validations object in your code, it’s pretty intuitive to build your custom validation. For example, I was working on a component where the reactive data element was an object, and I needed to check that at least one of the object's properties had a truthy value.  So I built a simple javascript function:
+      </p>
+        <div class="codeblock">
+          <pre>
+function objectHasTruthyValue (obj) {
+  return Object.keys(obj).some(k => obj[k] === true)
+}</pre>
+        </div>
+      <p>
+        At this point I COULD just include that function within my component and call it inside the <span class="codespan">validators</span> block, like in the basic example above. OR EVEN BETTER -- I can add it to a <span class="codespan">customValidators.js</span> file and then import it into all the components that need it.  The result looks like this:
+      </p>
+      <div class="codeblock">
+        <pre>
+import { objectHasTrueValue }  from '../helpers/customValidators.js'
+
+...(rest of the component omitted)
+
+validations () {
+  return {
+    username: required,
+    userAttributes: { objectHasTrueValue }
+  }
+}
+        </pre>
+      </div>
+      <p>
+        In time I can build a useful library of validators that are specific to my needs and can be dropped into any of my components.
+      </p>
+      <p>
+        Vuelidate has been a pleasantly useful tool for simplifying a set of common tasks -- exactly what a library should be. <span style="color:#b60d00">Thanks for reading!</span>
+      </p>
+      <div class="article-footer">
+      </div>
+    </div>
+  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
+</body>
+</html>
