@@ -474,6 +474,11 @@ body {
     justify-items: center;
   }
 
+  .others {
+    display: grid;
+    justify-items: center;
+  }
+
   .icon-caption-wrapper {
     width: 230px;
   }
