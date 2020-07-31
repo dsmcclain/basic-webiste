@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>little programs -- article template</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="w3.js"></script>
+</head>
+<body>
+  <div class="article-container">
+    <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>WebTAP</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p></p>
+      </div>
+      <div class="hero-wrapper">
+        <div class="article-hero-image">
+          <img src="images/webtap-report.png">
+        </div>
+
+        <div class="info-block">
+          <h3><span class="info-category">What it is: </span>The Web Transparency & Accountability Project monitors the data collection and data use practices of websites and services, in an effort to provide oversight, advise regulators, and inform the public of potentially deceptive and unethical data practies.</h3>
+          <h3><span class="info-category">How it's built: </span>WebTAP's software is called OpenWPM</link>, and it is built on Firefox and Selenium.  In essence, OpenWPM simulates a human being using a browser to access websites and services, much in the way a feature-test suite simulates user behavior in an app.  By automating browser activity and recording observations, WebTAP can run tests that simulate the behavior of thousands of users interacting with a site or service.</h3>
+          <h3><span class="info-category">How to use it: </span>The github page of OpenWPM gives good guidance for anyone wanting to use the software to conduct their own research.  The WebTAP website also has a large collection of talks, articles, and research papers that the project has produced.  There is a lot of valuable information that is easily accessible.</h3>
+        </div>
+      </div>
+
+      <p class="article-subtitle">THE STORY</p>
+
+      <p>
+        I was reading the book "Weapons of Math Destruction" by data-scientist Cathy O'Neil (<a href="https://www.mathbabe.org">mathbabe.org</a>), and the author mentioned WebTAP.  This was in the context of discussing the complex, opaque algorithms that are used across business and government to make high-stakes decisions, often using shaky statistical methods, questionable objectives, and outright deception.  O'Neil highlights the opacity as a particularly dangerous aspect of these algorithms: "The models are, by design, inscrutable black boxes.  That makes it harder to question the score or protest against it, or to definitevely answer the question: 'does the model work against the subject's interest?"<sup><a href="#fn1">1</a></sup></p>
+      <p>
+        And it's true.  We all know, for example, that Amazon serves us up products based in part on the data it has collected about us -- our shopping history, what we have searched for, the websites we frequent, maybe even the people we interact with online. But how can we know if these decisions are being made with any care for our wellbeing or our rights? And how can we speak up if we think they are not? And what happens when similar models are used to determine whether or not we qualify for a loan, or move forward in a job application, or get flagged for police observation? If the methods of reaching these decisions are opaque, even to the people employing them, what does that say about our rights and freedoms in the face of their power?
+      </p>
+      <p>
+        Efforts to increase transparency and oversight are essential.  So I was thrilled when O'Neil introduced me to WebTAP.  WebTAP was started in 2013, and its founders state that the project is "focused on monitoring and reverse-engineering web tracking...mostly studying 'third party online tracking.'"<sup><a href="#fn2">2</a></sup> The methodology is very interesting -- using Firefox and Selenium, the OpenWPM platform allows researchers to simulate not only the behaviors of actual human users, but also simulate different demographics by 'building up a specified history of activity in the automated browser'." (ibid, 8). By taking advantage of automated browsing, WebTAP has been able to "visit as many as one million websites every month." (ibid, 8).  To anyone who has used Selenium as part of a testing suite before (raises hand), this is an impressive/terrifying scale.
+      </p>
+      <p>
+        I'm not going to go in depth on any of the research and presentations that WebTAP has produced, because if you are interested you will be better served investigating them yourself. If you arent sure where to start, I humbly recomend WebTAP founder Arvind Narayanan's 20-minute presentation "The Web Tracking Arms Race: Past, Present, and Future" (on their <a href="https://webtap.princeton.edu/talks">talks</a> page). My hope is that if we are in an arms-race when it comes to data-collection technology, projects like WebTAP continue to get the funding and attention they need in order to keep up.
+      </p>
+      <p><span style="color:#b60d00">Thanks for reading!</span></p>
+      <div class="article-footer">
+        <div class="separator-line"></div>
+        <p class="citation" id="fn1">1. O'Neil, Cathy, <em>Weapons of Math Destruction</em> (New York, Crown Publishing Group, 2016), 29.</p>
+        <p class="citation" id="fn2">2. Narayanan, Arvind and Reisman, Dillon. "The Princeton Web Transparency and Accountability Project." https://lonlon.io/webtap_book_chapter.pdf, pg 4. Accessed July 2020. </p>
+      </div>
+    </div>
+  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
+</body>
+</html>

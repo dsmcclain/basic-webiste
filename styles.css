@@ -453,6 +453,12 @@ body {
   min-width: 0;
 }
 
+.citation {
+  font-size: smaller;
+  padding-left: 36px;
+  text-indent: -36px;
+}
+
 .separator-line {
   border-top: 1px solid black;
   max-width: 15%;
