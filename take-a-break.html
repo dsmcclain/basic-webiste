@@ -9,29 +9,7 @@
 </head>
 <body>
   <div class="article-container">
-    <div class="nav-wrapper">
-      <input type="checkbox" class="menu-toggler">
-      <div class="hamburger"><div></div></div>
-      <div class="nav-link-wrapper">
-        <div class="nav-link" id="home-link">
-          <a href="index.html">Home</a>
-        </div>
-        <div class="nav-link" id="about-link">
-          <a href="about.html">About</a>
-        </div>
-        <div class="nav-link" id="by-me-link">
-          <a href="https://github.com/dsmcclain">Github</a>
-        </div>
-      </div>
-
-      <div class="header-title">
-        <div>little programs</div>
-      </div>
-
-      <div class="name-logo">
-        <div>DYLAN MCCLAIN</div>
-      </div>
-    </div>
+    <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
 
     <div class="article-wrapper">
 
@@ -97,35 +75,9 @@
       </div>
     </div>
   </div>
-  <div class="articles-children footer">
-    <div class="footer-title">little programs</div>
-
-    <div class="footer-content-wrapper">
-      <div class="footer-link-wrapper">
-        <div class="footer-link">
-          <a href="about.html">About</a>
-        </div>
-        |
-        <div class="footer-link">
-          <a href="about.html">Archives</a>
-        </div>
-        |
-        <div class="footer-link">
-          <a href="about.html">Programs By Me</a>
-        </div>
-        |
-        <div class="footer-link">
-          <a href="https://github.com/dsmcclain">Github</a>
-        </div>
-        |
-        <div class="footer-link">
-          <a href="https://www.linkedin.com/in/dylan-mcclain-987815183/">LinkedIn</a>
-        </div>
-      </div>
-      <div class="footer-name-logo">
-        <div>DYLAN MCCLAIN</div>
-      </div>
-    </div>
-  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
 </body>
 </html>
