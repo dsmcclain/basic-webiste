@@ -372,22 +372,30 @@ body {
   color: #777
 }
 
-.hero-wrapper {
+.article-hero {
   display: grid;
   grid-column: 2 / 12;
   grid-template-columns: repeat(10, 1fr);
+  justify-items: center;
+}
+
+.article-hero-wrapper {
+  grid-column: 1 / -1;
+  grid-template-columns: fit-content(100%) minmax(0, 40vw);
+  display: grid;
 }
 
 .article-hero-image {
-  grid-column: 1 / 6;
   padding: 10px;
-  margin: auto;
+  display: grid;
+  align-items: center;
 }
 
 .info-block {
-  grid-column: 6 / -1;
+  display: grid;
   padding: 10px;
   font-size: 1.5vw;
+  align-items: center;
 }
 
 .info-block a {
