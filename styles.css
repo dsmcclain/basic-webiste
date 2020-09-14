@@ -118,13 +118,14 @@ body {
 .two-column-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  min-height: 85vh;
+  align-items: center;
 }
 
 .profile-img-wrapper {
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .profile-img-wrapper img {
@@ -789,12 +790,3 @@ body {
     justify-content: center;
   }
 }
-
-/* colors */
-
-/* body: #ffb47f */
-/* header/footer: #ffd0c3 */
-/* cards: #fff190 */
-/*        #c5e3ff */
-/*        #fd6e5e */
-/*        #93ca8b */
