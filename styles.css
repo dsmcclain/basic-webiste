@@ -534,6 +534,7 @@ body {
   }
 
   .article-hero-image {
+    grid-template-columns: 1fr;
     grid-column: 1 / -1;
   }
 
