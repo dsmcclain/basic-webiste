@@ -376,13 +376,13 @@ body {
   display: grid;
   grid-column: 2 / 12;
   grid-template-columns: repeat(10, 1fr);
-  justify-items: center;
 }
 
 .article-hero-wrapper {
   grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 40vw) minmax(0, 40vw);
+  grid-template-columns: fit-content(100%) minmax(0, 40vw);
   display: grid;
+  justify-content: center;
 }
 
 .article-hero-image {
@@ -464,6 +464,10 @@ body {
 
 .info-block h3 > * {
   color: #b60d00;
+}
+
+.info-block h3 > del {
+  color: #4b4b4b;
 }
 
 .article-subtitle {
