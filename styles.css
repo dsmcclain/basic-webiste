@@ -203,6 +203,13 @@ body {
   text-transform: uppercase;
 }
 
+.articles-icon.little-programs {
+  background: linear-gradient(-70deg,
+  #ffd0c3 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/title-image-sm.jpg');
+}
+
 .articles-icon.yahtzee {
   background: linear-gradient(-70deg,
   #c5e3ff 30%,
@@ -587,6 +594,7 @@ body {
   font-size: 40px;
   font-weight: bold;
   margin: 20px 0px 20px 0px;
+  color: #4b4b4b;
 }
 
 .section-subtitle {
@@ -599,6 +607,7 @@ body {
   border-bottom: 1px solid black;
   font-weight: bold;
   font-size: 1.75vw;
+  color: #4b4b4b;
 }
 
 .articles-section-wrapper {
@@ -615,6 +624,7 @@ body {
   grid-column: 1 / 3;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .article-image > a > img {
@@ -625,13 +635,15 @@ body {
   padding: 10px 10px 10px 25px;
   grid-column: 3 / 7;
   font-weight: bold;
+  font-size: 22px;
+  color: #4b4b4b;
 }
 
 .article-name {
   color: #b60d00;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
@@ -786,6 +798,10 @@ body {
   .article-description {
     grid-column: 1 / -1;
     padding: 5px 0;
+  }
+
+  .article-description-text > p > .category {
+    color: #b60d00;
   }
 
   .row-separator {
