@@ -3,6 +3,11 @@ body {
   font-family: 'Roboto', sans-serif;
   font-family: 'Source Code Pro', monospace;
   margin: 0px;
+  word-break: keep-all;
+  -moz-hyphens:none;
+  -ms-hyphens:none;
+  -webkit-hyphens: none;
+  hyphens:none;
 }
 
 .container {
@@ -708,6 +713,10 @@ body {
     grid-column: 2 / -2;
     overflow: scroll;
     justify-content: unset;
+  }
+
+  .squish {
+    font-size: 14px;
   }
 
   .articles-icon.webtap {
