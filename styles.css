@@ -4,7 +4,6 @@ body {
   font-family: 'Source Code Pro', monospace;
   margin: 0px;
   overflow-wrap: break-word;
-  word-wrap: break-word;
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
@@ -28,7 +27,6 @@ body {
   background: #ffd0c3;
   z-index: 100;
   box-shadow: 0 8px 6px -6px #000;
-  word-wrap: normal;
   overflow-wrap: normal;
 }
 
@@ -181,7 +179,6 @@ body {
 
 .articles-card {
   margin: 1.5vw;
-  word-wrap: normal;
   overflow-wrap: normal;
 }
 
@@ -572,7 +569,6 @@ body {
 
   .codeblock {
     grid-column: 2 / -2;
-    word-wrap: break-word;
     overflow: scroll;
     justify-content: unset;
   }
