@@ -166,6 +166,13 @@ body {
   margin: 1.5vw;
 }
 
+.articles-caption {
+  padding: 0px 5px 0px 5px;
+  margin: 5px;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+}
+
 .articles-icon {
   display: flex;
   align-items: center;
@@ -181,11 +188,11 @@ body {
   max-height: 300px;
 }
 
-.articles-caption {
-  padding: 0px 5px 0px 5px;
-  margin: 5px;
-  font-size: 1.5vw;
-  text-transform: uppercase;
+.articles-icon.neon {
+  background: linear-gradient(-70deg,
+  #c5e3ff 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/neon-icon.jpg')
 }
 
 .articles-icon.little-programs {

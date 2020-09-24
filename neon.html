@@ -69,7 +69,7 @@
         The solution was recursion. When a tile is clicked, create a "path" by checking the tile’s neighbor to see if the two tiles link up. If they do, follow the neighboring tile to <em>its</em> neighbor and see if those two link. The base case is achieved when you reach out to the neighbor and find a link, only to realize that the neighbor is the very first tile in the path. That’s a loop! If at any point you reach out to a tile’s neighbor and there is no link, the recursive function ends.
       </p>
       <p>
-        I’m sure I could have figured out this recursive function a year ago, as a “junior”. But being a developer is about much more than algorithms. For example, Neon was never meant for a mobile device, so what if somebody visited the site on their phone? Did I want them to just see a broken website? That’s not very professional. So I built a mobile-welcome screen to handle the situation:
+        I’m sure I could have figured out this recursive function a year ago, as a “junior”. But being a developer is about much more than algorithms. For example, Neon was never meant for a mobile device, so what if somebody visited the site on their phone? Did I want them to just see a broken website? That’s not very professional. So I built a mobile welcome-screen to handle the situation:
       </p>
       <img class="article-internal-image" src="images/neon-mobile-welcome.png" alt="a screenshot of a handsome web page reading please visit with a larger screen"/>
       <p>
