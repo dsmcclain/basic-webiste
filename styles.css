@@ -479,6 +479,10 @@ body {
   text-align: center;
 }
 
+.footnote > a {
+  color: #b60d00;
+}
+
 .article-footer {
   color: #777;
   min-width: 0;
