@@ -372,6 +372,10 @@ body {
   min-height: 0;
 }
 
+.article-wrapper > p > a {
+  color: #b60d00;
+}
+
 .article-title {
   text-align: center;
   font-size: larger;
@@ -439,7 +443,7 @@ body {
 }
 
 .article-internal-image {
-  width: 65%;
+  max-width: 65%;
   margin: auto;
 }
 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>little programs -- neon</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="w3.js"></script>
+</head>
+<body>
+  <div class="article-container">
+    <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>Neon</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p>Built Summer 2020</p>
+      </div>
+      <div class="article-hero">
+        <div class="article-hero-wrapper">
+          <div class="article-hero-image">
+            <img src="images/neon-in-action.png">
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-wrapper">
+              <h3><span class="info-category">What it is: </span>A game where the screen fills up with glass tubes and the player must click the tubes to rotate them into loops that fill with neon light. It's a reinvention of a lost flash game that I loved as a teen.</h3>
+              <h3><span class="info-category">How it's built: </span>This single page application was built with the Vue.js framework and makes extensive use of Vuex for state management. So the code is mostly JavaScript. I also used Inkscape to create the game graphics.</h3>
+              <h3><span class="info-category">How to use it: </span>Play it <a href="https://neongame.netlify.app">here</a>. See the code <a href="https://github.com/dsmcclain/neon">here</a>.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="article-subtitle">THE STORY</p>
+
+      <p>
+        Sometime last spring I could feel myself graduating.  Not in the concrete definition of the word, like with a cap-and-gown, but in the sense of <em>moving to the next level</em>. I was graduating beyond the role of “junior” developer.
+      </p>
+      <p>
+        How could I tell? For starters, I was getting bigger and bigger projects at work – projects that were measured in weeks and months instead of hours and days. These were projects that required me to do a lot more research, create a roadmap, and set up meetings between different teams.
+      </p>
+      <p>
+        I also started noticing that I was being asked for input on a lot of different issues. I was asked to weigh in on the decision of whether or not to incorporate tracking software on our site. I was asked what I thought about new features for our product, regardless of whether I would be working on them. I was expected to have an <em>opinion</em> beyond just making changes to the code.
+      </p>
+      <p>
+        I was graduating. And let me be clear – this whole distinction between “junior” and “mid-level” is completely artificial. Things are not so black and white. There are definitely still days where I feel green, green, green. But I noticed I was working in a wider orbit. And I wanted to build something that reflected this graduation. Something that stretched my comfort zone but also showcased my evolution.
+      </p>
+      <p>
+        So I built neon.
+      </p>
+      <p>
+        Neon is my revival of a cherised game from my high-school years, a flash game called “Moebius Challenge.” It was an addictive puzzle game where you had to rotate tiles to create loops while under time pressure. I couldn’t find any code or documentation for the original game, or a securely-hosted version of it. All I could find was that the original author was someone named Xiao Fred<sup><a href="#fn1">1</a></sup>. But I longed to play Moebius again.
+      </p>
+      <p>
+        I wonder if I could build it, I thought. I wonder if I could make it look…<em>even cooler</em>.
+      </p>
+      <p>
+        <span style="color: #b60d00">The most interesting piece of the design puzzle</span> was calculating when a loop is created. You have a 9x9 board with ‘corner’ and ‘straight’ tiles, and every time the user clicks on a tile it rotates. The program needs to know when the tiles are arranged to make a closed loop. This is tricky because each tile is pointing in two directions, and a single click changes the whole board.
+      </p>
+      <img class="article-internal-image" src="images/neon-loop.png" alt="a loop of neon lights"/>
+      <p>
+        The solution was recursion. When a tile is clicked, create a "path" by checking the tile’s neighbor to see if the two tiles link up. If they do, follow the neighboring tile to <em>its</em> neighbor and see if those two link. The base case is achieved when you reach out to the neighbor and find a link, only to realize that the neighbor is the very first tile in the path. That’s a loop! If at any point you reach out to a tile’s neighbor and there is no link, the recursive function ends.
+      </p>
+      <p>
+        I’m sure I could have figured out this recursive function a year ago, as a “junior”. But being a developer is about much more than algorithms. For example, Neon was never meant for a mobile device, so what if somebody visited the site on their phone? Did I want them to just see a broken website? That’s not very professional. So I built a mobile-welcome screen to handle the situation:
+      </p>
+      <img class="article-internal-image" src="images/neon-mobile-welcome.png" alt="a screenshot of a handsome web page reading please visit with a larger screen"/>
+      <p>
+        What if somebody visited and didn’t understand the game? I needed an instructions page. What about when somebody paused the game? I needed a pause screen. What about if somebody clicked on the instructions while the game is going? Do I want to have the game keep running in the background or should it automatically pause? As I mature as a developer I realize that graduating beyond "junior" work is as much about getting better at asking these <em>what ifs</em> as it is about getting better at writing software. <span style="color:#b60d00">Thanks for reading!</span>
+      </p>
+      <p>
+        <span style="color: #777">Epilogue</span>
+      </p>
+      <p>
+        People have asked me about the overall look of the game, and how I got that neon “effect” to work. I could write an entire article about creating the glass tubes of neon. The short answer is that I drew them on the computer. I used Inkscape, an open source graphic editing platform, and just watched a bunch of tutorials. And there is no animation happening. When a loop is formed, the image of the inert tube of glass gets replaced by an identical piece of “lit” glass. It’s the old switcheroo. Like most things I create, if I can find a solution using the most basic tools available, then that’s what I will do. (I mean, did you read my article about <a href="./little-programs.html">this very website?</a>)
+      </p>
+      <p>
+        It took longer than I wanted to create some realistic-looking neon tubes that connected perfectly to one another and ‘lit up’ when looped, and I’m sure a skilled designer could have done better, but I’m happy with how it turned out.
+      </p>
+      <div class="article-footer">
+        <div class="separator-line"></div>
+        <p class="citation" id="fn1">1. If anyone reading this knows anything about the mysterious Xiao Fred, or about the original Moebius Challenge game, please reach out to me.</p>
+      </div>
+    </div>
+  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
+</body>
+</html>
