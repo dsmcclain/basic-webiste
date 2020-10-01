@@ -195,6 +195,13 @@ body {
   url('images/neon-icon.jpg')
 }
 
+.articles-icon.airy-canary {
+  background: linear-gradient(-70deg,
+  #93ca8b 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/airy.jpg');
+}
+
 .articles-icon.little-programs {
   background: linear-gradient(-70deg,
   #ffd0c3 30%,
@@ -386,6 +393,7 @@ body {
 
 .article-wrapper > p > a {
   color: #b60d00;
+  text-decoration: none;
 }
 
 .article-title {
@@ -443,14 +451,22 @@ body {
 }
 
 .codeblock {
-  display: flex;
+  background-color: #f1ccb0;
   grid-column: 4 / 10;
-  justify-content: center;
+  white-space: nowrap;
+  overflow: scroll;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.codeblock::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 .codeblock > p, pre {
   color: #b60d00;
-  background-color: #f1ccb0;
   padding: 10px 15px 10px 15px;
 }
 
@@ -732,8 +748,6 @@ body {
 
   .codeblock {
     grid-column: 2 / -2;
-    overflow: scroll;
-    justify-content: unset;
   }
 
   .squish {

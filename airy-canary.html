@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>little programs -- airy canary</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="w3.js"></script>
+</head>
+<body>
+  <div class="article-container">
+    <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>Airy Canary</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p>Built September 2020</p>
+      </div>
+      <div class="article-hero">
+        <div class="article-hero-wrapper">
+          <div class="article-hero-image">
+            <img src="images/airy-canary-alert.png">
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-wrapper">
+              <h3><span class="info-category">What it is: </span>A script that uses PurpleAir's public API to log air quality readings and show an alert when air pollution has passed a certain threshold.</h3>
+              <h3><span class="info-category">How it's built: </span>The program is a ruby script with a bash script wrapping it. Ruby uses <span class="codespan">cURL</span> to hit the API and then parses and logs the response. The bash wrapper controls the popup alerts.</h3>
+              <h3><span class="info-category">How to use it: </span>Search PurpleAir's docs to find the id of the nearest air sensor, then pass that id to the program on the command line or in a cron job.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="article-subtitle">THE STORY</p>
+
+      <p>
+        If you don't live in the Western United States, let me bring you up to speed--in August and September of 2020 massive wildfires caused widespread destruction and blanketed the region with the most polluted air on the planet.
+      </p>
+      <p>
+        Here in Portland we had the worst air quality of any city in the world for 12 straight days. This photo shows the deterioration of air quality over the span of five days:
+      </p>
+      <img class="article-internal-image" src="images/pdx-smoke.jpg">
+      <p>
+        Those last two images are what it looked like out of my living room window for nearly two weeks. Everyone was confined indoors. We shoved towels into the doorjambs and taped hvac filters to the backs of box fans to create homemade air filters. We still had headaches and burning eyes and scratchy throats the whole time. We checked the air quality readings constantly.
+      </p>
+      <p>
+        The primary source I was using to monitor air quality was PurpleAir--they have a lot of sensors in their system, one that's just three blocks from my house. After visiting their site over and over for days I thought to myself, I wonder if they have a public API? Answer: yes. So I built Airy Canary.
+      </p>
+      <p>
+        At this point I should also let you know that my home office is an uninsulated garage. I love working in there but it leves me very exposed to polluted air. So I wanted airy canary to do two things: 1) create a log of the air quality during my work hours so that I can glance at it and see over time what level of pollution I am exposing myself to, and 2) show an alert if the air quality gets above a certain threshold. This way I can monitor the safety of my work environment without having to go to PurpleAir's website every 20 minute. It saves me time and sanity.
+      </p>
+      <p>
+        I decided I wanted to create a ruby script to do most of the work. This is because ruby makes it so easy to work with strings and ruby's <span class="codespan">CSV</span> library makes generating and maintaing a log simple as can be. Goal number 1 accomplished. </codespan><span style="color: #b60d00">But the most interesting piece of the design puzzle was the alert.</span> For that I needed to write a bash script that acted as a wrapper around the ruby program.
+      </p>
+      <div class="codeblock">
+        <p>!#/bin/bash<br>
+        filepath="$( cd "$( dirname "$0" )" && pwd )/canary.rb"<br>
+        sensor_id=$1<br>
+        output=$(ruby $filepath $sensor_id)<br>
+        if [ -n "$output" ]<br>
+        then<br>
+        &ensp;zenity --warning --title="Air Quality Warning" --text="$output" --width=600 --display=:0.0 2>/dev/null<br>
+        fi<br>
+        </p>
+      </div>
+      <p>
+        There's a few things going on here. First, we create a variable <span class="codespan">filepath</span>. That snippet <span class="codespan">$( cd "$( dirname "$0" )" && pwd )</span> basically says, find whatever directory this script ran from (<span class="codespan">dirname "$0"</span>), go there (<span class="codespan">cd</span>), then tell me where you are (<span class="codespan">pwd</span>). Seems a bit roundabout but it's the only way to be sure you are getting the absolute path of the directory. Since we will ultimately be using cron to run this program, a simple <span class="codespan">pwd</span> will give us the path where cron is executing the file, not necessarily the path where the file actually lives.
+      </p>
+      <p>
+        This is important because as you can see I concatenate <span class="codespan">/canary.rb</span> to the end of the string so that the bash wrapper can call the ruby script using the absolute path.
+      </p>
+      <p>
+        Next, we assign the varaible <span class="codespan">sensor_id</span> to <span class="codespan">$1</span>. What is <span class="codespan">$1</span> you ask? In Bash, arguments passed to a script are stored in special variables called Positional Parameters. So the first argument passed is stored in <span class="codespan">$1</span>, the second is stored in <span class="codespan">$2</span>, and so on. (You will also notice that the command <span class="codespan">dirname "$0"</span> described above makes use of the Positional Parameter <span class="codespan">$0</span>, which holds the actual command being passed to the shell to run the script, i.e. the name of the file being executed.)
+      </p>
+      <p>
+        This means that when we run the bash script, we need to pass the sensor id as an argument to the script. Using an argument to set the id makes the program much more useful--I can pass the id of the sensor closest to my house, and somebody across town can use the same script by passing a different id as an argument.
+      </p>
+      <p>
+        The rest of the bash wrapper script is an if statement that checks whether the ruby script outputs a warning for poor air quality (<span class="codespan">[ -n "$output" ]</span> asks 'does this variable hold a non-empty value?'), and if so it uses Zenity to display an alert on the screen. Zenity is a standard utility for Ubuntu distributions that is used for generating dialog boxes.
+      </p>
+      <p>
+        My cronjob looks like this: <span class="codespan">*/30 * * * * /home/dylan/src/airy-canary/canary-wrapper.sh 22903</span> where 22903 is the id of the sensor I want data from. If you've read my article on my <a href="./take-a-break.html">take-a-break reminder</a> you know that I use crontab to set my linux cron jobs, and that this particular cron syntax means "run every 30 minutes". It is really satisfying to know that I can work in my garage office and not have to check the air quality every 30 minutes because I know my computer is doing it for me. I hope this article inspires you to build a cron helper for yourself. <span style="color:#b60d00">Thanks for reading!</span>
+      </p>
+    </div>
+  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
+</body>
+</html>
