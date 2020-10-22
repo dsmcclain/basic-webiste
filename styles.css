@@ -589,10 +589,6 @@ body {
 
 /* RESPONSIVE ABOUT PAGE */
 @media only screen and (max-width:1000px) {
-  .two-column-wrapper {
-    min-height: unset;
-  }
-
   .profile-img-wrapper {
     grid-column: 1 / -1;
   }
@@ -605,6 +601,10 @@ body {
 @media only screen and (max-width:900px) {
   .site-title {
     font-size: 32px;
+  }
+
+  .articles-icon > .articles-title{
+    -webkit-text-stroke: none;
   }
 
   .about-statement {
@@ -623,7 +623,7 @@ body {
 
   .profile-img-wrapper > img {
     width: 100%;
-    object-fit: contain;
+    object-fit: scale-down;
   }
 
   .article-wrapper {
