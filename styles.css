@@ -604,7 +604,7 @@ body {
   }
 
   .articles-icon > .articles-title{
-    -webkit-text-stroke: none;
+    -webkit-text-stroke: 0px black;
   }
 
   .about-statement {
@@ -623,7 +623,7 @@ body {
 
   .profile-img-wrapper > img {
     width: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
   }
 
   .article-wrapper {
