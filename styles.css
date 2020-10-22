@@ -589,6 +589,10 @@ body {
 
 /* RESPONSIVE ABOUT PAGE */
 @media only screen and (max-width:1000px) {
+  .two-column-wrapper {
+    min-height: unset;
+  }
+
   .profile-img-wrapper {
     grid-column: 1 / -1;
   }
