@@ -13,7 +13,7 @@
   <div w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
   <div class="container">
 
-    <div class="main-hero-wrapper">
+    <div class="main-hero-wrapper" role="banner">
 
       <div class="hero-items-wrapper">
         <div class="main-hero-background" style="background-image:url(images/title-image.jpg)"></div>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="articles-container">
-      <div class="header">
+      <div class="header" role="main">
         <div class="about-statement">
           <p>Exploring the scripts, apps,
             libraries, and websites
@@ -34,7 +34,7 @@
       </div>
 
   <!-- PROGRAMS BY ME SECTION -->
-      <div class="articles-children content-main">
+      <section aria-label="programs by me section" class="articles-children by-me-section">
         <div class="articles-section-header">Built By Me</div>
         <div class="articles-card">
           <div class="icon-caption-wrapper">
@@ -84,7 +84,9 @@
             <p class="articles-caption">A monopoly game for your terminal window.  Written in Ruby.</p>
           </div>
         </div>
+      </section>
   <!-- PROGRAMS BY OTHERS SECTION -->
+      <section aria-label="programs by others section" class="articles-children by-others-section">
         <div class="articles-section-header by-others">Built By Others</div>
         <div class="articles-card others">
           <a href="webtap.html" class="articles-icon webtap">
@@ -98,7 +100,7 @@
           </a>
           <p class="articles-caption">A validation library for the Vue framework.</p>
         </div>
-      </div>
+      </section>
       <div w3-include-html="partials/footer.html" class="footer"></div>
     </div>
   </div>

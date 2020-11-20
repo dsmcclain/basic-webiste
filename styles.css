@@ -143,11 +143,18 @@ body {
   font-size: 2.5vw;
 }
 
-.content-main {
+.articles-children {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: left;
+}
+
+.by-me-section {
+  padding: 20px 50px 0px 50px;
+}
+
+.by-others-section {
   padding: 20px 50px 50px 50px;
 }
 
@@ -567,7 +574,7 @@ body {
 
 /* TABLET STYLES */
 @media only screen and (max-width: 1125px) {
-  .content-main {
+  .articles-children {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -703,7 +710,7 @@ body {
     border-bottom: none;
   }
   
-  .content-main {
+  .articles-children {
     grid-template-columns: 1fr;
     justify-items: center;
   }
