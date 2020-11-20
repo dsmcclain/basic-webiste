@@ -306,8 +306,11 @@ body {
   grid-template-columns: repeat(8, 1fr);
 }
 
-.by-me-section-header {
+.by-me-main-section {
   grid-column: 3 / 7;
+}
+
+.by-me-section-header {
   text-align: center;
   text-transform: uppercase;
   font-size: 40px;
@@ -317,7 +320,6 @@ body {
 }
 
 .section-subtitle {
-  grid-column: 3 / 7;
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto 10px auto;
@@ -672,14 +674,21 @@ body {
     display: none;
   }
 
+  .by-me-main-section {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   .by-me-section-header {
     grid-column: 1 / -1;
     font-size: 30px;
   }
 
   .section-subtitle {
-    grid-column: 2 / 8;
+    grid-column: 2 / 6;
     font-size: 16px;
+    width: 90%;
   }
 
   .article-image {
