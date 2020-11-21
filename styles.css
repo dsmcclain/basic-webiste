@@ -360,6 +360,10 @@ body {
   color: #4b4b4b;
 }
 
+.article-description > h2 {
+  margin: 0;
+}
+
 .article-description-text > p > a {
   color: #b60d00;
   text-decoration: none;
