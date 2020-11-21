@@ -30,15 +30,15 @@
 
           <div class="info-block">
             <div class="info-block-wrapper">
-              <h3><span class="info-category">What it is: </span>A script that uses PurpleAir's public API to log air quality readings and show an alert when air pollution has passed a certain threshold.</h3>
-              <h3><span class="info-category">How it's built: </span>The program is a ruby script with a bash script wrapping it. The ruby script uses <span class="codespan">cURL</span> to hit the API and then parses and logs the response. The bash wrapper controls the popup alerts.</h3>
-              <h3><span class="info-category">How to use it: </span>Search PurpleAir's docs to find the id of the nearest air sensor, then pass that id to the program on the command line or in a cron job.</h3>
+              <h2><span class="info-category">What it is: </span>A script that uses PurpleAir's public API to log air quality readings and show an alert when air pollution has passed a certain threshold.</h2>
+              <h2><span class="info-category">How it's built: </span>The program is a ruby script with a bash script wrapping it. The ruby script uses <span class="codespan">cURL</span> to hit the API and then parses and logs the response. The bash wrapper controls the popup alerts.</h2>
+              <h2><span class="info-category">How to use it: </span>Search PurpleAir's docs to find the id of the nearest air sensor, then pass that id to the program on the command line or in a cron job.</h2>
             </div>
           </div>
         </div>
       </div>
 
-      <p class="article-subtitle">THE STORY</p>
+      <h3 class="article-subtitle">THE STORY</h3>
 
       <p>
         If you don't live in the Western United States, let me bring you up to speed--in August and September of 2020 massive wildfires caused widespread destruction and blanketed the region with the most polluted air on the planet.
@@ -54,7 +54,7 @@
         The primary source I was using to monitor air quality was PurpleAir--they have a lot of sensors in their system, one that's just three blocks from my house. After visiting their site over and over for days I thought to myself, I wonder if they have a public API? Answer: yes. So I built Airy Canary.
       </p>
       <p>
-        At this point I should also let you know that my home office is an uninsulated garage. I love working in there but it leves me very exposed to polluted air. So I wanted airy canary to do two things: 1) create a log of the air quality during my work hours so that I can glance at it and see over time what level of pollution I am exposing myself to, and 2) show an alert if the air quality gets above a certain threshold. This way I can monitor the safety of my work environment without having to go to PurpleAir's website every 20 minute. It saves me time and sanity.
+        At this point I should also let you know that my home office is an uninsulated garage. I love working in there but it leaves me very exposed to polluted air. So I wanted airy canary to do two things: 1) create a log of the air quality during my work hours so that I can glance at it and see over time what level of pollution I am exposing myself to, and 2) show an alert if the air quality gets above a certain threshold. This way I can monitor the safety of my work environment without having to go to PurpleAir's website every 20 minute. It saves me time and sanity.
       </p>
       <p>
         I decided I wanted to create a ruby script to do most of the work. This is because ruby makes it so easy to work with strings and ruby's <span class="codespan">CSV</span> library makes generating and maintaing a log simple as can be. Goal number 1 accomplished. </codespan><span style="color: #b60d00">But the most interesting piece of the design puzzle was the alert.</span> For that I needed to write a bash script that acted as a wrapper around the ruby program.
