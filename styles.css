@@ -237,6 +237,13 @@ body {
   url('images/light-streaks.jpg');
 }
 
+.articles-icon.postman {
+  background: linear-gradient(-70deg,
+  #fee476 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/mailboxes.jpg');
+}
+
 .articles-icon.webtap {
   background: linear-gradient(-70deg,
   #93ca8b 30%,
