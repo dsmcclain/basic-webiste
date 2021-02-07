@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>little programs -- awk</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="w3.js"></script>
+</head>
+<body>
+  <div class="article-container">
+    <div role="navigation" w3-include-html="partials/navbar.html" class="nav-wrapper"></div>
+
+    <div class="article-wrapper">
+
+      <div class="article-title">
+        <h1>Awk</h1>
+      </div>
+
+      <div class="article-by-line">
+        <p></p>
+      </div>
+      <div class="article-hero">
+        <div class="article-hero-wrapper">
+          <div class="article-hero-image">
+            <img src="images/columnar-data.png">
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-wrapper">
+              <h2><span class="info-category">What it is: </span>A language designed for searching files for records or columns that contain certain patterns and then performing actions on those records.</h2>
+              <h2><span class="info-category">How it's built: </span>'True' awk was developed in the 70s and 80s and is implemented in C. The source can be found on <a href="https://github.com/onetrueawk/awk">github</a>.</h2>
+              <h2><span class="info-category">How to use it: </span>Awk is often used as a command in the format <span class=codespan>awk '/regex/ { do something; }' myfile</span>, but because it has a rich library of variables and flow-control, longer scripts with more complex effects can be acheived.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="article-subtitle">THE STORY</h3>
+
+      <p>
+        Awk! Awk! I love the sound of this instrument. It makes me think of a large bird making funny vocalizations. It doesn't hurt that it sounds like an abbreviation of the word <em>awkward</em>. Awk!
+      </p>
+      <p>
+        I think it has a bad reputation. I told a friend I was learning awk and he was like <em>yuck</em>. Ask around. 
+      </p>
+      <p>
+        It's an interesting tool to me because I was introduced to it as a simple search tool for column-based data, to be used like <span class=codespan>awk /regex/ myfile</span> . It wasn't until I did my shell scripting deep-dive this year that I learned awk is actually a whole language. That blew my mind. It's not just for passing a flag or two. Awk has real power and flexibility for dealing with columnar data.
+      </p>
+      <p>
+        For example, lets say we have a csv file with 50K records in it, where the first field is an account number and the third field is an account name. And lets say I need to find every record that has an account number starting with '40-401-' followed by a long string of numerals. And I need a count of how many records fit this pattern and I need the names on each of these accounts and I need it all quickly.
+      </p>
+      <p>
+        One way I could do this would be opening the file in VSCode and then doing a search for '40-401-'.  Some problems with this. First, if the file is, say, 500k records long, VSCode might trip and fall trying to open it. Second, when you do <span class=codespan>Ctrl-F 40-401</span> it might lie to you by including records like '41-129-40-401-5'. So you still have to go through and verify each record. Third, remember that you need the names on each account as well. So what is your next step? Copy and paste the name of each record that showed up in your search? Yikes. But I've seen people do exactly this. With giant files.
+      </p>
+      <p>
+        What if you could do something like
+      </p>
+        <div class=codeblock>
+          <p>
+            awk 'BEGIN { FS="," ; print "Account Number, Account Name" }<br/>
+            &emsp;/^40\-401\-/ { print $1 "," $3 ; count++ }<br/>
+            &emsp;END { print "Total Accounts = " count }' myfile.csv
+          </p>
+        </div>
+      <p>
+        and voila! Immediate results. Write it to a file and send it off.
+      </p>
+      <p>
+        Awk has a reputation for being convoluted and complex, but if you are buying that reputation then I think you should take a closer look at the code snippet above. It's actually pretty friendly. There is a core code block <span class=codespan>{ print $1...}</span> preceded by a range (in this case the regex <span class=codespan>/^40\-401\-/</span></span> which indicates 'only look at lines starting with 40-401-'. To get the number of matching records we simply use a variable <span class=codespan>count</span> which we just <em>declare and increment all at once</em>. Gosh, how easy. This core code block is flanked by two other code blocks (delineated by <span class=codespan>{}</span>, again <em>how easy</em>) which use the special words <span class=codespan>BEGIN</span> and <span class=codespan>END</span>. <span class=codespan></span><span class=codespan>BEGIN</span> executes once at the start of the script and </span>END</span> executes once at the end, meaning they are perfect tools for adding a header and final count to our output. Soooo easy. And maybe the best part is that you can stash the little awklet into a file, say <span class=codespan>account_names.awk</span>, and call it whenever you need like <span class=codespan>awk -f account_names.awk myfile.csv</span>. If you really thought you would be using this snippet frequently you could even wrap the whole command in a shell file and allow it to accept arguments for the regex and the particular columns you want in the output. What. Could. Be. Easier.
+      </p>
+      <p>
+        So, take another look at awk. You can accomplish a lot with it. Especially if you find yourself working with text data and csv files frequently. You will likely discover a lot of quick and efficient ways to automatic your work. <span style="color:#b60d00">Thanks for reading!</span></p>
+      </p>
+    </div>
+  </div>
+  <div w3-include-html="partials/footer.html" class="footer"></div>
+  <script>
+    w3.includeHTML();
+  </script>
+</body>
+</html>

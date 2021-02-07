@@ -237,6 +237,13 @@ body {
   url('images/light-streaks.jpg');
 }
 
+.articles-icon.awk {
+  background: linear-gradient(-70deg,
+  #93ca8b 30%,
+  rgba(0, 0, 0, 0) 30%),
+  url('images/awk-columns.jpg');
+}
+
 .articles-icon.postman {
   background: linear-gradient(-70deg,
   #fee476 30%,
